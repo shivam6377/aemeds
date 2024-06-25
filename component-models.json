@@ -276,11 +276,7 @@
         "value": "",
         "label": "CTA Title"
       },
-      {
-        "component": "tab",
-        "label": "Primary Offers",
-        "name": "primaryOffers"
-      },
+     
       {
         "component": "text-input",
         "name": "card1_title",
@@ -424,11 +420,6 @@
         "valueType": "string",
         "name": "card2_bckImgAlt",
         "label": "Card2 Background Image Alt"
-      },
-      {
-        "component": "tab",
-        "label": "Secondary Offers",
-        "name": "secondaryOffers"
       },
 
       {
