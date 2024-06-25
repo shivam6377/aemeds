@@ -172,7 +172,7 @@
 
                   "card1_title":"Card1 Title",
                   "card1_titleType": "h3",
-                  "card1_descripton": "Lorem Impsum",
+                  "card1_description": "Lorem Impsum",
                   "card1_link": "#",
                   "card1_linkText": "Card1 Text",
                   "card1_bckImg": "",
@@ -180,7 +180,7 @@
 
                   "card2_title":"Card2 Title",
                   "card2_titleType": "h3",
-                  "card2_descripton": "Lorem Impsum",
+                  "card2_description": "Lorem Impsum",
                   "card2_link": "#",
                   "card2_linkText": "Card2 Text",
                   "card2_bckImg": "",
@@ -188,13 +188,13 @@
 
                   "card3_title":"Card3 Title",
                   "card3_titleType": "h3",
-                  "card3_descripton": "Lorem Impsum",
+                  "card3_description": "Lorem Impsum",
                   "card3_link": "#",
                   "card3_linkText": "Card3 Text",
                   
                   "card4_title":"Card4 Title",
                   "card4_titleType": "h3",
-                  "card4_descripton": "Lorem Impsum",
+                  "card4_description": "Lorem Impsum",
                   "card4_link": "#",
                   "card4_linkText": "Card4 Text"
                 }
