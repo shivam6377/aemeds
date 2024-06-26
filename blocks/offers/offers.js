@@ -18,7 +18,7 @@ function createElementWithClass(tagName, classNames) {
   
     const span = document.createElement('span');
     const img = document.createElement('img');
-    img.src = '/content/dam/vishal_eds/north_east.svg'; // Replace with your SVG image path
+    img.src = '/content/dam/xwalk-shivam/north_east.svg'; // Replace with your SVG image path
     span.appendChild(img);
   
     ctaLink.textContent = ctaText || 'View More';
@@ -86,7 +86,7 @@ function createTeaserCard(title, description, actionText, actionUrl, teaserClass
     const subContainer = createElementWithClass('div', 'sub-container');
     const leftContainer = createElementWithClass('div', 'left-container');
     const leftImg = document.createElement('img');
-    leftImg.setAttribute('src', '/content/dam/vishal_eds/desktop-left-img.png');
+    leftImg.setAttribute('src', '/content/dam/xwalk-shivam/desktop-left-img.png');
     leftImg.setAttribute('alt', 'mobile img');
     leftContainer.appendChild(leftImg);
   
@@ -95,7 +95,7 @@ function createTeaserCard(title, description, actionText, actionUrl, teaserClass
     // Right container card 1
     const rightCard1 = createElementWithClass('div', 'right-container__card-1');
     const img1 = document.createElement('img');
-    img1.setAttribute('src', '/content/dam/vishal_eds/mobile-image.png');
+    img1.setAttribute('src', '/content/dam/xwalk-shivam/mobile-image.png');
     img1.setAttribute('alt', 'mobile img');
     const content1 = createElementWithClass('div', 'right-container__content');
 
