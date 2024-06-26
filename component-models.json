@@ -291,13 +291,13 @@
     "fields": [
        {
          "component": "text-input",
-         "name": "title",
+         "name": "component_title",
          "label": "Title",
          "valueType": "string"
        },
        {
         "component": "select",
-        "name": "titleType",
+        "name": "component_titleType",
         "value": "h2",
         "label": "Type",
         "valueType": "string",
@@ -330,7 +330,7 @@
       },
       {
         "component": "richtext",
-        "name": "description",
+        "name": "component_description",
         "value": "",
         "label": "Description",
         "valueType": "string"
@@ -338,21 +338,21 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "link",
+        "name": "component_link",
         "value": "#",
         "label": "CTA Link"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "linkText",
+        "name": "component_linkText",
         "value": "Button",
         "label": "CTA Text"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "linkTitle",
+        "name": "component_linkTitle",
         "value": "",
         "label": "CTA Title"
       }

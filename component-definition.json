@@ -181,13 +181,14 @@
                 "template": {
                   "name": "Offers",
                   "filter": "offers",
+
                   "model": "offers",
-                  "title": "Exciting Offers",
-                  "titleType": "h2",
-                  "description": "This is description for exciting offers and rewards.",
-                  "link": "#",
-                  "linkText": "View All Offers",
-                  "linkTitle": "all-offer-button"
+                  "component_title": "Exciting Offers",
+                  "component_titleType": "h2",
+                  "component_description": "This is description for exciting offers and rewards.",
+                  "component_link": "#",
+                  "component_linkText": "View All Offers",
+                  "component_linkTitle": "all-offer-button"
                 }
               }
             }
@@ -202,7 +203,15 @@
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
                   "name": "Offer",
-                  "model": "offer"
+                  "model": "offer",
+
+                  "offer_Title":"Card1 Title",
+                  "offer_TitleType": "h3",
+                  "offer_Description": "Lorem Impsum",
+                  "offer_link": "#",
+                  "offer_linkText": "Card1 Text",
+                  "offer_BckImg": "",
+                  "offer_BckImgAlt": "Card1 Image Alternative"
                 }
               }
             }
