@@ -363,13 +363,13 @@
     "fields": [
        {
          "component": "text-input",
-         "name": "offer_title",
+         "name": "offer_Title",
          "label": "Offer Title",
          "valueType": "string"
        },
        {
         "component": "select",
-        "name": "offer_titleType",
+        "name": "offer_TitleType",
         "value": "h2",
         "label": "Offer Title Type",
         "valueType": "string",
@@ -402,7 +402,7 @@
       },
       {
         "component": "richtext",
-        "name": "offer_description",
+        "name": "offer_Description",
         "value": "",
         "label": "Offer Description",
         "valueType": "string"
@@ -424,13 +424,13 @@
       {
         "component": "reference",
         "valueType": "string",
-        "name": "offer_bckImg",
+        "name": "offer_BckImg",
         "label": "Offer Background Image"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "offer_bckImgAlt",
+        "name": "offer_BckImgAlt",
         "label": "Offer Background Image Alt"
       }
      ]
