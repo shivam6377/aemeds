@@ -355,19 +355,23 @@
         "name": "linkTitle",
         "value": "",
         "label": "CTA Title"
-      },
-     
-      {
-        "component": "text-input",
-        "name": "card1_title",
-        "label": "Card1_Title",
-        "valueType": "string"
-      },
-      {
+      }
+     ]
+  },
+  {
+    "id": "offer",
+    "fields": [
+       {
+         "component": "text-input",
+         "name": "offertitle",
+         "label": "Offer Title",
+         "valueType": "string"
+       },
+       {
         "component": "select",
-        "name": "card1_titleType",
+        "name": "offertitleType",
         "value": "h2",
-        "label": "Card1 Title Type",
+        "label": "Offer Title Type",
         "valueType": "string",
         "options": [
           {
@@ -398,229 +402,36 @@
       },
       {
         "component": "richtext",
-        "name": "card1_description",
+        "name": "offerdescription",
         "value": "",
-        "label": "Card1 Description",
+        "label": "Offer Description",
         "valueType": "string"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "card1_link",
+        "name": "offerlink",
         "value": "#",
-        "label": "Card1 CTA Link"
+        "label": "Offer CTA Link"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "card1_linkText",
-        "value": "Button",
-        "label": "Card1 CTA Text"
+        "name": "offerlinkText",
+        "value": "View offer",
+        "label": "Offer CTA Text"
       },
       {
         "component": "reference",
         "valueType": "string",
-        "name": "card1_bckImg",
-        "label": "Card1 Background Image"
+        "name": "offer_bckImg",
+        "label": "Offer Background Image"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "card1_bckImgAlt",
-        "label": "Card1 Background Image Alt"
-      },
-      {
-        "component": "text-input",
-        "name": "card2_title",
-        "label": "Card2_Title",
-        "valueType": "string"
-      },
-      {
-        "component": "select",
-        "name": "card2_titleType",
-        "value": "h2",
-        "label": "Card2 Title Type",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "h1",
-            "value": "h1"
-          },
-          {
-            "name": "h2",
-            "value": "h2"
-          },
-          {
-            "name": "h3",
-            "value": "h3"
-          },
-          {
-            "name": "h4",
-            "value": "h4"
-          },
-          {
-            "name": "h5",
-            "value": "h5"
-          },
-          {
-            "name": "h6",
-            "value": "h6"
-          }
-        ]
-      },
-      {
-        "component": "richtext",
-        "name": "card2_description",
-        "value": "",
-        "label": "Card2 Description",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "card2_link",
-        "value": "#",
-        "label": "Card2 CTA Link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "card2_linkText",
-        "value": "Button",
-        "label": "Card2 CTA Text"
-      },
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "card2_bckImg",
-        "label": "Card2 Background Image"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "card2_bckImgAlt",
-        "label": "Card2 Background Image Alt"
-      },
-
-      {
-        "component": "text-input",
-        "name": "card3_title",
-        "label": "Card3_Title",
-        "valueType": "string"
-      },
-      {
-        "component": "select",
-        "name": "card3_titleType",
-        "value": "h2",
-        "label": "Card3 Title Type",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "h1",
-            "value": "h1"
-          },
-          {
-            "name": "h2",
-            "value": "h2"
-          },
-          {
-            "name": "h3",
-            "value": "h3"
-          },
-          {
-            "name": "h4",
-            "value": "h4"
-          },
-          {
-            "name": "h5",
-            "value": "h5"
-          },
-          {
-            "name": "h6",
-            "value": "h6"
-          }
-        ]
-      },
-      {
-        "component": "richtext",
-        "name": "card3_description",
-        "value": "",
-        "label": "Card3 Description",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "card3_link",
-        "value": "#",
-        "label": "Card3 CTA Link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "card3_linkText",
-        "value": "Button",
-        "label": "Card3 CTA Text"
-      },
-      {
-        "component": "text-input",
-        "name": "card4_title",
-        "label": "Card4_Title",
-        "valueType": "string"
-      },
-      {
-        "component": "select",
-        "name": "card4_titleType",
-        "value": "h2",
-        "label": "Card4 Title Type",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "h1",
-            "value": "h1"
-          },
-          {
-            "name": "h2",
-            "value": "h2"
-          },
-          {
-            "name": "h3",
-            "value": "h3"
-          },
-          {
-            "name": "h4",
-            "value": "h4"
-          },
-          {
-            "name": "h5",
-            "value": "h5"
-          },
-          {
-            "name": "h6",
-            "value": "h6"
-          }
-        ]
-      },
-      {
-        "component": "richtext",
-        "name": "card4_description",
-        "value": "",
-        "label": "Card4 Description",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "card4_link",
-        "value": "#",
-        "label": "Card4 CTA Link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "card4_linkText",
-        "value": "Button",
-        "label": "Card4 CTA Text"
+        "name": "offer_bckImgAlt",
+        "label": "Offer Background Image Alt"
       }
      ]
   }

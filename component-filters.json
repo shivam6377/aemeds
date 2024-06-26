@@ -38,5 +38,11 @@
     "components": [
       "card"
     ]
+  },
+  {
+    "id": "offers",
+    "components": [
+      "offer-component"
+    ]
   }
 ]
