@@ -363,13 +363,13 @@
     "fields": [
        {
          "component": "text-input",
-         "name": "offertitle",
+         "name": "offer_title",
          "label": "Offer Title",
          "valueType": "string"
        },
        {
         "component": "select",
-        "name": "offertitleType",
+        "name": "offer_titleType",
         "value": "h2",
         "label": "Offer Title Type",
         "valueType": "string",
@@ -402,7 +402,7 @@
       },
       {
         "component": "richtext",
-        "name": "offerdescription",
+        "name": "offer_description",
         "value": "",
         "label": "Offer Description",
         "valueType": "string"
@@ -410,14 +410,14 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "offerlink",
+        "name": "offer_link",
         "value": "#",
         "label": "Offer CTA Link"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "offerlinkText",
+        "name": "offer_linkText",
         "value": "View offer",
         "label": "Offer CTA Text"
       },
