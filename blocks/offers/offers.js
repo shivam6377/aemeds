@@ -61,10 +61,30 @@ function createTeaserCard(title, description, actionText, actionUrl, teaserClass
     return teaserContainer;
   }
   
-  
+  function extractBlockChildren(block){
+    const [component, card1, card2, card3, card4] = block.children;
+
+    return{
+      component,
+      card1,
+      card2,
+      card3,
+      card4
+    }
+  }
+
+  function extractElementFromBlock(block, selector){
+    return block.querySelector(selector);
+  }
+
+
   
   // Function to build the HTML structure
   function buildStructure(block) {
+
+    const blockChilren = extractBlockChildren(block);
+    console.log("BlockChilren:", blockChilren);
+
     const section = createElementWithClass('section', 'deals-offers-container');
     const wrapper = createElementWithClass('div', 'immersive__wrapper-light');
     const contentDiv = createElementWithClass('div', 'immersive__content');
