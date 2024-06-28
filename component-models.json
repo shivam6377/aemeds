@@ -366,14 +366,14 @@
   },
   {
     "id": "offer",
-    "fields":[
-      {
-        "component": "text-input",
-        "valueType": "string",
-        "name": "offer_Title",
-        "label": "Offer Title"
-      },
-      {
+    "fields": [
+       {
+         "component": "text-input",
+         "name": "offer_Title",
+         "label": "Offer Title",
+         "valueType": "string"
+       },
+       {
         "component": "select",
         "name": "offer_TitleType",
         "value": "h2",
@@ -413,7 +413,6 @@
         "label": "Offer Description",
         "valueType": "string"
       },
-     
       {
         "component": "text",
         "valueType": "string",
@@ -421,37 +420,31 @@
         "value": "#",
         "label": "Offer CTA Link"
       },
-     
       {
         "component": "text",
         "valueType": "string",
         "name": "offer_linkText",
-        "value": "View Offer",
+        "value": "View offer",
         "label": "Offer CTA Text"
       },
-     
       {
         "component": "reference",
-        "label": "Icon for Button",
+        "valueType": "string",
         "name": "offer_linkIcon",
-        "valueType": "string"
-      }
-      ,
- 
+        "label": "Icon for Button"
+      },
       {
         "component": "reference",
-        "label": "Offer Background Image",
+        "valueType": "string",
         "name": "offer_BckImg",
-        "valueType": "string"
+        "label": "Offer Background Image"
       },
- 
       {
         "component": "text",
-        "label": "Offer Background Image Alt",
+        "valueType": "string",
         "name": "offer_BckImgAlt",
-        "valueType": "string"
+        "label": "Offer Background Image Alt"
       }
- 
-    ]
+     ]
   }
 ]
