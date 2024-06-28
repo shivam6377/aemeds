@@ -355,6 +355,12 @@
         "name": "component_linkTitle",
         "value": "",
         "label": "CTA Title"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "component_linkIcon",
+        "label": "Icon for Button"
       }
      ]
   },
@@ -420,6 +426,12 @@
         "name": "offer_linkText",
         "value": "View offer",
         "label": "Offer CTA Text"
+      },
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "offer_linkIcon",
+        "label": "Icon for Button"
       },
       {
         "component": "reference",
