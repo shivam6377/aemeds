@@ -30,7 +30,8 @@
       "columns",
       "quote",
       "teaser",
-      "offers"
+      "offers",
+      "secondary-navigation-component"
     ]
   },
   {
