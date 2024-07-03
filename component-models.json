@@ -464,52 +464,52 @@
         "valueType": "string"
       },
       {
-        "component": "select",
+        "component": "multi-select",
         "name": "sub_navigation_options",
         "label": "Sub-Navigation Options",
         "valueType": "array",
+        "options": []
+      },
+      {
+        "component": "select",
+        "name": "hover_effect",
+        "label": "Hover Effect",
+        "valueType": "string",
         "options": [
           {
-            "name": "Highlights",
-            "value": "highlights"
+            "name": "Highlight",
+            "value": "highlight"
           },
           {
-            "name": "Build Your Own",
-            "value": "build_your_own"
-          },
-          {
-            "name": "Variants",
-            "value": "variants"
-          },
-          {
-            "name": "Specs",
-            "value": "specs"
-          },
-          {
-            "name": "Pricing",
-            "value": "pricing"
+            "name": "Underline",
+            "value": "underline"
           }
         ]
       },
       {
-        "component": "text",
-        "name": "hover_effect",
-        "label": "Hover Effect",
-        "value": "highlight"
-      },
-      {
-        "component": "text",
+        "component": "select",
         "name": "scroll_behavior",
         "label": "Scroll Behavior",
-        "value": "disappear_on_scroll_up"
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Disappear on Scroll Up",
+            "value": "disappear_on_scroll_up"
+          },
+          {
+            "name": "Sticky",
+            "value": "sticky"
+          }
+        ]
       },
       {
-        "component": "text",
+        "component": "toggle",
         "name": "horizontal_line",
         "label": "Horizontal Line",
-        "value": "true"
+        "valueType": "boolean"
       }
     ]
   }
+  
   
 ]
