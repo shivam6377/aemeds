@@ -438,21 +438,7 @@
        }
      ]
   },
-  {
-    "id": "another simpletext",
-    "fields": [
-     {
-       "component": "text",
-       "name": "text",
-       "label": "Simple Text",
-       "valueType": "string",
-       "description": "This is a text input with validation.",
-       "required": true,
-       "validation": {
-         "regExp": "^foo:.*",
-         "customErrorMsg": "Why don't you make like a tree and get outta here?"
-       }
-     },
+ 
      {
       "id": "secondary-navigation",
       "fields": [
@@ -491,5 +477,4 @@
       ]
     }
     ]
-  }
-]
+ 
