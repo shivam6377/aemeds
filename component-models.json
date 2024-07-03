@@ -464,11 +464,22 @@
         "valueType": "string"
       },
       {
-        "component": "multi-select",
+        "component": "multi-input",
         "name": "sub_navigation_options",
         "label": "Sub-Navigation Options",
         "valueType": "array",
-        "options": []
+        "fields": [
+          {
+            "name": "option_name",
+            "label": "Option Name",
+            "valueType": "string"
+          },
+          {
+            "name": "option_value",
+            "label": "Option Value",
+            "valueType": "string"
+          }
+        ]
       },
       {
         "component": "select",
