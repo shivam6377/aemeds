@@ -44,5 +44,11 @@
     "components": [
       "offer-component"
     ]
+  },
+  {
+    "id": "secondary-navigation",
+    "components": [
+      "cta"
+    ]
   }
 ]

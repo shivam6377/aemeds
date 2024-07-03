@@ -452,7 +452,44 @@
          "regExp": "^foo:.*",
          "customErrorMsg": "Why don't you make like a tree and get outta here?"
        }
-     }
+     },
+     {
+      "id": "secondary-navigation",
+      "fields": [
+        {
+          "component": "reference",
+          "name": "grand_vitara_logo",
+          "label": "Grand Vitara Logo",
+          "valueType": "string",
+          "multi": false
+        },
+        {
+          "component": "text-input",
+          "name": "alt",
+          "value": "",
+          "label": "Alt Text",
+          "valueType": "string"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "fields": [
+        {
+          "component": "text",
+          "name": "ctaLinkText",
+          "label": "CTA Text",
+          "valueType": "string"
+        },
+        {
+          "component": "text",
+          "valueType": "string",
+          "name": "ctaLink",
+          "label": "CTA Link"
+        }
+       
+      ]
+    }
     ]
   }
 ]
