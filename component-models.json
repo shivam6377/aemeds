@@ -450,7 +450,7 @@
           "multi": false
         },
         {
-          "component": "text-input",
+          "component": "text",
           "name": "grand_vitara_alt",
           "value": "",
           "label": "Grand Vitara Alt Text",
