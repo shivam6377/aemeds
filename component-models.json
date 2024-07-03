@@ -464,60 +464,48 @@
         "valueType": "string"
       },
       {
-        "component": "multi-input",
-        "name": "sub_navigation_options",
-        "label": "Sub-Navigation Options",
-        "valueType": "array",
-        "fields": [
-          {
-            "name": "option_name",
-            "label": "Option Name",
-            "valueType": "string"
-          },
-          {
-            "name": "option_value",
-            "label": "Option Value",
-            "valueType": "string"
-          }
-        ]
+        "component": "tab",
+        "label": "Column 1",
+        "valueType": "col1"
       },
       {
-        "component": "select",
-        "name": "hover_effect",
-        "label": "Hover Effect",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Highlight",
-            "value": "highlight"
-          },
-          {
-            "name": "Underline",
-            "value": "underline"
-          }
-        ]
+        "component": "richtext",
+        "name": "rte",
+        "label": "Rich Text-List",
+        "valueType": "string"
       },
       {
-        "component": "select",
-        "name": "scroll_behavior",
-        "label": "Scroll Behavior",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Disappear on Scroll Up",
-            "value": "disappear_on_scroll_up"
-          },
-          {
-            "name": "Sticky",
-            "value": "sticky"
-          }
-        ]
+        "component": "tab",
+        "label": "Column 2",
+        "valueType": "col2"
       },
       {
-        "component": "toggle",
-        "name": "horizontal_line",
-        "label": "Horizontal Line",
-        "valueType": "boolean"
+        "component": "richtext",
+        "name": "rte2",
+        "label": "Rich Text-List",
+        "valueType": "string"
+      },
+      {
+        "component": "tab",
+        "label": "Column 3",
+        "valueType": "col3"
+      },
+      {
+        "component": "richtext",
+        "name": "rte3",
+        "label": "Rich Text-List",
+        "valueType": "string"
+      },
+      {
+        "component": "tab",
+        "label": "Column 4",
+        "valueType": "col4"
+      },
+      {
+        "component": "richtext",
+        "name": "rte4",
+        "label": "Rich Text-List",
+        "valueType": "string"
       }
     ]
   }
