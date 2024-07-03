@@ -506,19 +506,6 @@
         "name": "sec_text4",
         "label": "Text-List",
         "valueType": "string"
-      },
-      {
-        "component": "multi-input",
-        "name": "dynamic_list",
-        "label": "Dynamic List",
-        "valueType": "array",
-        "itemFields": [
-          {
-            "name": "list_item",
-            "label": "List Item",
-            "valueType": "string"
-          }
-        ]
       }
     ]
   }
