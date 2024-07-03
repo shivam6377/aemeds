@@ -186,107 +186,7 @@
       }
     ]
   },
-  {
-    "id": "quote",
-    "fields": [
-       {
-         "component": "text-area",
-         "name": "quote",
-         "value": "",
-         "label": "Quote",
-         "valueType": "string"
-       },
-       {
-         "component": "text-input",
-         "valueType": "string",
-         "name": "author",
-         "label": "Author",
-         "value": ""
-       }
-     ]
-  },
 
-  {
-    "id": "teaser",
-    "fields": [
-      {
-        "component": "reference",
-        "valueType": "string",
-        "name": "background_image",
-        "label": "Background Image"
-      },
-       {
-         "component": "text",
-         "valueType": "string",
-         "name": "background_imageAlt",
-         "label": "Image Alt",
-         "value": ""
-       },
-       {
-        "component": "text",
-        "valueType": "string",
-        "name": "foreground_title",
-        "value": "",
-        "label": "Title"
-      },
-      {
-        "component": "select",
-        "name": "foreground_titleType",
-        "value": "h2",
-        "label": "Title Type",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "h1",
-            "value": "h1"
-          },
-          {
-            "name": "h2",
-            "value": "h2"
-          },
-          {
-            "name": "h3",
-            "value": "h3"
-          },
-          {
-            "name": "h4",
-            "value": "h4"
-          },
-          {
-            "name": "h5",
-            "value": "h5"
-          },
-          {
-            "name": "h6",
-            "value": "h6"
-          }
-        ]
-      },
-      {
-        "component": "richtext",
-        "name": "foreground_description",
-        "value": "",
-        "label": "Description",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "foreground_link",
-        "value": "#",
-        "label": "Foreground CTA Link"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "foreground_linkText",
-        "value": "Button",
-        "label": "Foreground CTA Text"
-      }
-     ]
-  },
-
- 
   {
     "id": "offers",
     "fields": [
@@ -519,44 +419,40 @@
       }
     ]
   },
-
- 
   {
-    "id": "secondary-navigation",
+    "id": "testBlock",
     "fields": [
       {
-        "component": "reference",
-        "name": "grand_vitara_logo",
-        "label": "Grand Vitara Logo",
-        "valueType": "string",
-        "multi": false
-      },
-      {
-        "component": "text-input",
-        "name": "alt",
-        "value": "",
-        "label": "Alt Text",
-        "valueType": "string"
-      }
-    ]
+         "component": "number",
+         "valueType": "number",
+         "name": "field1",
+         "label": "Number Field",
+         "description": "This is a number field.",
+         "required": true,
+         "placeholder": null,
+         "validation": {
+           "numberMin": 0,
+           "numberMax": 88,
+           "customErrorMsg": "You also need 1.21 gigawatts."
+         }
+       }
+     ]
   },
   {
-    "id": "cta",
+    "id": "another simpletext",
     "fields": [
-      {
-        "component": "text",
-        "name": "ctaLinkText",
-        "label": "CTA Text",
-        "valueType": "string"
-      },
-      {
-        "component": "text",
-        "valueType": "string",
-        "name": "ctaLink",
-        "label": "CTA Link"
-      }
-     
+     {
+       "component": "text",
+       "name": "text",
+       "label": "Simple Text",
+       "valueType": "string",
+       "description": "This is a text input with validation.",
+       "required": true,
+       "validation": {
+         "regExp": "^foo:.*",
+         "customErrorMsg": "Why don't you make like a tree and get outta here?"
+       }
+     }
     ]
   }
-  
 ]

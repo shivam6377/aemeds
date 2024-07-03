@@ -29,9 +29,8 @@
       "cards",
       "columns",
       "quote",
-      "teaser",
       "offers",
-      "secondary-navigation"
+      "testBlock"
     ]
   },
   {
@@ -44,12 +43,6 @@
     "id": "offers",
     "components": [
       "offer-component"
-    ]
-  },
-  {
-    "id": "secondary-navigation",
-    "components": [
-      "cta"
     ]
   }
 ]

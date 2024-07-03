@@ -137,41 +137,6 @@
           }
         },
         {
-          "title": "Quote",
-          "id": "quote",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Quote",
-                  "model": "quote",
-                  "quote": "<p>Think, McFly! Think!</p>",
-                  "author": "Biff Tannen"
-                }
-              }
-            }
-          }
-        },
-        {
-          "title": "Teaser",
-          "id": "teaser",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "Teaser",
-                  "model": "teaser",
-
-                  "foreground_title": "New Teaser",
-                  "foreground_titleType": "h3"
-                }
-              }
-            }
-          }
-        },
-        {
           "title": "Offers",
           "id": "offers",
           "plugins": {
@@ -179,11 +144,17 @@
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "Offers",
-                  "filter": "offers",
-
-                  "model": "offers"
+                  "name" :"Offers",
+                  "filter":"offers",
                   
+                  "model": "offers",
+                  "component_title": "Exciting offers and deals for you!",
+                  "component_titleType": "h2",
+                  "component_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, Lorem ipsum dolor sit amet.",
+                  "component_link":"#",
+                  "component_linkText":"View More",
+                  "component_linkTitle": "all-offer-button",
+                  "component_linkTarget": "_self"
                 }
               }
             }
@@ -198,7 +169,18 @@
                 "resourceType": "core/franklin/components/block/v1/block/item",
                 "template": {
                   "name": "Offer",
-                  "model": "offer"
+                  "model": "offer",
+                  
+                  "offer_Title":"Lorem Ipsum",
+                  "offer_TitleType": "h3",
+                  "offer_Description":"Lorem ipsum dolor sit amet Lorem ipsum dolor sit amet Lorem ipsum",
+                  "offer_link":"#",
+                  "offer_linkText":"Get Exchange",
+                  "offer_BckImg":"",
+                  "offer_BckImgAlt":"Card1 Default Image Alternative",
+                  "offer_linkTarget": "_blank",
+                  "offer_Mobile_BckImg":"",
+                  "offer_Mobile_BckImgAlt":"Card1 Mobile Image Alternative"
 
                 }
               }
@@ -206,38 +188,23 @@
           }
         },
         {
-          "title": "Secondary Navigation",
-          "id": "secondary-navigation",
+          "title": "Test Block",
+          "id": "testBlock",
           "plugins": {
             "xwalk": {
               "page": {
                 "resourceType": "core/franklin/components/block/v1/block",
                 "template": {
-                  "name": "Secondary Navigation",
-                  "filter": "secondary-navigation",
-                  "model": "secondary-navigation"
+                  "name": "Test block",
+                  "model": "testBlock"
                 }
-              }
-            }
-          }
-        },
-        {
-          "title": "CTA",
-          "id": "cta",
-          "plugins": {
-            "xwalk": {
-              "page": {
-                "resourceType": "core/franklin/components/block/v1/block",
-                "template": {
-                  "name": "CTA",
-                  "model": "cta"
-                }
+                
               }
             }
           }
         }
-        
       ]
     }
+    
   ]
 }
