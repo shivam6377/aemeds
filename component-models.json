@@ -508,7 +508,7 @@
         "valueType": "string"
       },
       {
-        "component": "tabs-list",
+        "component": "multi-input",
         "name": "dynamic_list",
         "label": "Dynamic List",
         "valueType": "array",
