@@ -465,8 +465,8 @@
       },
       {
         "component": "tab",
-        "label": "Column 1",
-        "valueType": "col1"
+        "label": "Row 1",
+        "valueType": "row1"
       },
       {
         "component": "richtext",
@@ -476,8 +476,8 @@
       },
       {
         "component": "tab",
-        "label": "Column 2",
-        "valueType": "col2"
+        "label": "Row 2",
+        "valueType": "row2"
       },
       {
         "component": "richtext",
@@ -487,8 +487,8 @@
       },
       {
         "component": "tab",
-        "label": "Column 3",
-        "valueType": "col3"
+        "label": "Row 3",
+        "valueType": "row3"
       },
       {
         "component": "richtext",
@@ -498,8 +498,8 @@
       },
       {
         "component": "tab",
-        "label": "Column 4",
-        "valueType": "col4"
+        "label": "Row 4",
+        "valueType": "row4"
       },
       {
         "component": "richtext",
