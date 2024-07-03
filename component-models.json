@@ -502,7 +502,7 @@
         "valueType": "row4"
       },
       {
-        "component": "richtext",
+        "component": "text",
         "name": "sec_text4",
         "label": "Text-List",
         "valueType": "string"
