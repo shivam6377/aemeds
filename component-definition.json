@@ -219,7 +219,7 @@
         },
         {
           "title": "Secondary Navigation",
-          "id": "secondary-navigation-component",
+          "id": "secondary-navigation",
           "plugins": {
             "xwalk": {
               "page": {
