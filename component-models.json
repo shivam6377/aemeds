@@ -286,16 +286,19 @@
      ]
   },
 
+ 
   {
     "id": "offers",
     "fields": [
-       {
-         "component": "text-input",
-         "name": "component_title",
-         "label": "Title",
-         "valueType": "string"
-       },
-       {
+      {
+        "component": "text-input",
+        "valueType": "string",
+        "name": "component_title",
+        "label": "Title",
+        "description": "Heading for the offers component",
+        "required": true
+      },
+      {
         "component": "select",
         "name": "component_titleType",
         "value": "h2",
@@ -333,21 +336,47 @@
         "name": "component_description",
         "value": "",
         "label": "Description",
-        "valueType": "string"
+        "valueType": "string",
+        "description": "Description for the offers",
+        "required": true
+
       },
+
       {
         "component": "text",
         "valueType": "string",
         "name": "component_link",
         "value": "#",
-        "label": "CTA Link"
+        "label": "CTA Link",
+        "description": "Button link.",
+        "required": true
       },
+
       {
         "component": "text",
         "valueType": "string",
         "name": "component_linkText",
         "value": "Button",
-        "label": "CTA Text"
+        "label": "CTA Text",
+        "description": "Button text.",
+        "required": true
+      },
+      {
+        "component": "select",
+        "name": "component_linkTarget",
+        "value": "_self",
+        "label": "Button Link Target",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Same Tab",
+            "value": "_self"
+          },
+          {
+            "name": "New Tab",
+            "value": "_blank"
+          }
+        ]
       },
       {
         "component": "text",
@@ -358,20 +387,24 @@
       },
       {
         "component": "reference",
-        "valueType": "string",
+        "label": "Icon for Button",
         "name": "component_linkIcon",
-        "label": "Icon for Button"
+        "valueType": "string",
+        "description": "Icon for the button.",
+        "required": true
       }
-     ]
+    ]
   },
   {
     "id": "offer",
-    "fields":[
+    "fields": [
       {
         "component": "text-input",
         "valueType": "string",
         "name": "offer_Title",
-        "label": "Offer Title"
+        "label": "Offer Title",
+        "description": "Title for the offer teaser.",
+        "required": true
       },
       {
         "component": "select",
@@ -411,49 +444,83 @@
         "name": "offer_Description",
         "value": "",
         "label": "Offer Description",
-        "valueType": "string"
+        "valueType": "string",
+        "description": "Description for the offer.",
+        "required": true
       },
-     
+
       {
         "component": "text",
         "valueType": "string",
         "name": "offer_link",
         "value": "#",
-        "label": "Offer CTA Link"
+        "label": "Offer CTA Link",
+        "description": "Link for the offer button.",
+        "required": true
       },
-     
+
       {
         "component": "text",
         "valueType": "string",
         "name": "offer_linkText",
         "value": "View Offer",
-        "label": "Offer CTA Text"
+        "label": "Offer CTA Text",
+        "description": "Text for the offer button.",
+        "required": true
       },
-     
+      {
+        "component": "select",
+        "name": "offer_linkTarget",
+        "value": "_self",
+        "label": "Button Link Target",
+        "valueType": "string",
+        "options": [
+          {
+            "name": "Same Tab",
+            "value": "_self"
+          },
+          {
+            "name": "New Tab",
+            "value": "_blank"
+          }
+        ]
+      },
       {
         "component": "reference",
-        "label": "Icon for Button",
-        "name": "offer_linkIcon",
-        "valueType": "string"
-      }
-      ,
- 
-      {
-        "component": "reference",
-        "label": "Offer Background Image",
+        "label": "Bck Image Desktop (Default Img)",
         "name": "offer_BckImg",
-        "valueType": "string"
+        "valueType": "string",
+        "required": true
       },
- 
+
       {
         "component": "text",
-        "label": "Offer Background Image Alt",
+        "label": "Background Image Alt",
         "name": "offer_BckImgAlt",
+        "valueType": "string",
+        "required": true,
+        "condition": { "!==": [{"var" : "offer_BckImg"}, ""] }
+      },
+
+      {
+        "component": "reference",
+        "label": "Bck Image For Mobile",
+        "name": "offer_Mobile_BckImg",
         "valueType": "string"
+      },
+
+      {
+        "component": "text",
+        "label": "Offer Mobile Background Image Alt",
+        "name": "offer_Mobile_BckImgAlt",
+        "valueType": "string",
+        "required": true,
+        "condition": { "!==": [{"var" : "offer_Mobile_BckImg"}, ""] }
       }
- 
     ]
   },
+
+ 
   {
     "id": "secondary-navigation",
     "fields": [
