@@ -451,9 +451,9 @@
         },
         {
           "component": "text-input",
-          "name": "alt",
+          "name": "grand_vitara_alt",
           "value": "",
-          "label": "Alt Text",
+          "label": "Grand Vitara Alt Text",
           "valueType": "string"
         }
       ]
