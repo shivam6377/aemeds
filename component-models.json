@@ -487,24 +487,8 @@
         "valueType": "string",
         "name": "ctaLink",
         "label": "CTA Link"
-      },
-      {
-        "component": "select",
-        "name": "target",
-        "value": "",
-        "label": "Open Link in New Page ?",
-        "valueType": "string",
-        "options": [
-          {
-            "name": "Yes",
-            "value": "_blank"
-          },
-          {
-            "name": "No",
-            "value": "_self"
-          }
-        ]
       }
+     
     ]
   }
   
