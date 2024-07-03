@@ -469,9 +469,9 @@
         "valueType": "row1"
       },
       {
-        "component": "richtext",
-        "name": "rte",
-        "label": "Rich Text-List",
+        "component": "text",
+        "name": "sec_text1",
+        "label": "Text-List",
         "valueType": "string"
       },
       {
@@ -480,9 +480,9 @@
         "valueType": "row2"
       },
       {
-        "component": "richtext",
-        "name": "rte2",
-        "label": "Rich Text-List",
+        "component": "text",
+        "name": "sec_text2",
+        "label": "Text-List",
         "valueType": "string"
       },
       {
@@ -491,9 +491,9 @@
         "valueType": "row3"
       },
       {
-        "component": "richtext",
-        "name": "rte3",
-        "label": "Rich Text-List",
+        "component": "text",
+        "name": "sec_text3",
+        "label": "Text-List",
         "valueType": "string"
       },
       {
@@ -503,8 +503,8 @@
       },
       {
         "component": "richtext",
-        "name": "rte4",
-        "label": "Rich Text-List",
+        "name": "sec_text4",
+        "label": "Text-List",
         "valueType": "string"
       }
     ]
