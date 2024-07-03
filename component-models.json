@@ -470,12 +470,6 @@
         "value": "",
         "label": "Alt Text",
         "valueType": "string"
-      },
-      {
-        "component": "aem-content",
-        "valueType": "string",
-        "name": "href",
-        "label": "Link"
       }
     ]
   },
@@ -483,7 +477,7 @@
     "id": "cta",
     "fields": [
       {
-        "component": "text-input",
+        "component": "text",
         "name": "ctaText",
         "label": "CTA Text",
         "valueType": "string"
