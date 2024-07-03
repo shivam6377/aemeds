@@ -453,5 +453,63 @@
       }
  
     ]
+  },
+  {
+    "id": "secondary-navigation",
+    "fields": [
+      {
+        "component": "reference",
+        "name": "grand_vitara_logo",
+        "label": "Grand Vitara Logo",
+        "valueType": "string"
+      },
+      {
+        "component": "select",
+        "name": "sub_navigation_options",
+        "label": "Sub-Navigation Options",
+        "valueType": "array",
+        "options": [
+          {
+            "name": "Highlights",
+            "value": "highlights"
+          },
+          {
+            "name": "Build Your Own",
+            "value": "build_your_own"
+          },
+          {
+            "name": "Variants",
+            "value": "variants"
+          },
+          {
+            "name": "Specs",
+            "value": "specs"
+          },
+          {
+            "name": "Pricing",
+            "value": "pricing"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "name": "hover_effect",
+        "label": "Hover Effect",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "scroll_behavior",
+        "label": "Scroll Behavior",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "horizontal_line",
+        "label": "Horizontal Line",
+        "valueType": "string"
+      }
+    ]
   }
+  
 ]

@@ -216,7 +216,28 @@
               }
             }
           }
+        },
+        {
+          "title": "Secondary Navigation",
+          "id": "secondary-navigation-component",
+          "plugins": {
+            "xwalk": {
+              "page": {
+                "resourceType": "core/franklin/components/block/v1/block/item",
+                "template": {
+                  "name": "Secondary Navigation",
+                  "model": "secondary-navigation",
+                  "grand_vitara_logo": "{dynamic_logo_path}",
+                  "sub_navigation_options": ["{dynamic_option1}", "{dynamic_option2}", "{dynamic_option3}", "{dynamic_option4}", "{dynamic_option5}"],
+                  "hover_effect": "{dynamic_hover_effect}",
+                  "scroll_behavior": "{dynamic_scroll_behavior}",
+                  "horizontal_line": "{dynamic_horizontal_line}"
+                }
+              }
+            }
+          }
         }
+        
       ]
     }
   ]
