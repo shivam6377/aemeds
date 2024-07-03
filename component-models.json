@@ -461,51 +461,21 @@
         "component": "reference",
         "name": "grand_vitara_logo",
         "label": "Grand Vitara Logo",
+        "valueType": "string",
+        "multi": false
+      },
+      {
+        "component": "text-input",
+        "name": "alt",
+        "value": "",
+        "label": "Alt Text",
         "valueType": "string"
       },
       {
-        "component": "tab",
-        "label": "Row 1",
-        "valueType": "row1"
-      },
-      {
-        "component": "text",
-        "name": "sec_text1",
-        "label": "Text-List",
-        "valueType": "string"
-      },
-      {
-        "component": "tab",
-        "label": "Row 2",
-        "valueType": "row2"
-      },
-      {
-        "component": "text",
-        "name": "sec_text2",
-        "label": "Text-List",
-        "valueType": "string"
-      },
-      {
-        "component": "tab",
-        "label": "Row 3",
-        "valueType": "row3"
-      },
-      {
-        "component": "text",
-        "name": "sec_text3",
-        "label": "Text-List",
-        "valueType": "string"
-      },
-      {
-        "component": "tab",
-        "label": "Row 4",
-        "valueType": "row4"
-      },
-      {
-        "component": "text",
-        "name": "sec_text4",
-        "label": "Text-List",
-        "valueType": "string"
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "href",
+        "label": "Link"
       }
     ]
   }
