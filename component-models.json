@@ -495,19 +495,19 @@
         "component": "text",
         "name": "hover_effect",
         "label": "Hover Effect",
-        "valueType": "string"
+        "value": "highlight"
       },
       {
         "component": "text",
         "name": "scroll_behavior",
         "label": "Scroll Behavior",
-        "valueType": "string"
+        "value": "disappear_on_scroll_up"
       },
       {
         "component": "text",
         "name": "horizontal_line",
         "label": "Horizontal Line",
-        "valueType": "string"
+        "value": "true"
       }
     ]
   }
