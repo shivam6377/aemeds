@@ -69,7 +69,20 @@ console.log("block", block);
   
     // const logoHTML = logoComponent ? createLogoHTML(logoComponent) : '';
     // const ctaHTML = ctas.map(cta => createCtaButtonHTML(cta)).join('');
-  
+    document.addEventListener('DOMContentLoaded', function() {
+        const navButtons = document.querySelectorAll('.nav-button');
+    
+        navButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                navButtons.forEach(btn => btn.classList.remove('active'));
+    
+                // Add active class to the clicked button
+                button.classList.add('active');
+            });
+        });
+    });
+    
     block.innerHTML = `
     <nav class="navbar">
     ${temp.outerHTML}
