@@ -38,7 +38,17 @@ button.innerHTML=newButton.outerHTML;
     return buttonsContainer;
 }
 
+function setupNavButtons(navButtons) {
+    navButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            navButtons.forEach(btn => btn.classList.remove('active'));
 
+            // Add active class to the clicked button
+            button.classList.add('active');
+        });
+    });
+}
 
 
 
@@ -68,7 +78,10 @@ button.innerHTML=newButton.outerHTML;
         
 const navbarbuttons=block.querySelectorAll('.nav-button')    
 console.log(navbarbuttons);    
-       
+block.addEventListener('DOMContentLoaded', function() {
+    const navButtons = block.querySelectorAll('.nav-button');
+    setupNavButtons(navButtons);
+});
     
   }
   
