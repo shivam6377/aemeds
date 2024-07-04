@@ -77,9 +77,10 @@ function setupNavButtons(navButtons) {
  
         
 const navbarbuttons=block.querySelectorAll('.nav-button')    
-console.log(navbarbuttons);    
+   
 block.addEventListener('DOMContentLoaded', function() {
     const navButtons = block.querySelectorAll('.nav-button');
+    console.log(navButtons); 
     setupNavButtons(navButtons);
 });
     
