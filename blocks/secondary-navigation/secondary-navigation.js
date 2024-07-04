@@ -30,7 +30,7 @@ function createLogoHTML(component) {
   
   export default function decorate(block) {
     const [logoComponent, ...ctas] = block.children;
-
+console.log("block", block);
     console.log("Logo Component", logoComponent);
     console.log("ctaas", ctas);
   
