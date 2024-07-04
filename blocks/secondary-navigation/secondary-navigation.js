@@ -37,24 +37,25 @@ function createLogoHTML(component) {
     return buttonsContainer;
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const navButtons = document.querySelectorAll('.nav-button');
+
+    navButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            navButtons.forEach(btn => btn.classList.remove('active'));
+
+            // Add active class to the clicked button
+            button.classList.add('active');
+        });
+    });
+});
 
 // Example usage:
 
 
 
-  function createCtaButtonHTML(component) {
-    const ctaLinkText = component.querySelector('[data-aue-prop="ctaLinkText"]');
-    
-    if (!ctaLinkText) return '';
-    
-    return `
-      <div>
-        <p class="button-container">
-          <a href="#" data-aue-prop="ctaLinkText" data-aue-label="CTA Text" data-aue-type="text" title="${ctaLinkText.title}" class="button">${ctaLinkText.innerText}</a>
-        </p>
-      </div>
-    `;
-  }
+
   
   export default function decorate(block) {
     const [logoComponent, ...ctas] = block.children;
@@ -69,20 +70,7 @@ console.log("block", block);
   
     // const logoHTML = logoComponent ? createLogoHTML(logoComponent) : '';
     // const ctaHTML = ctas.map(cta => createCtaButtonHTML(cta)).join('');
-    document.addEventListener('DOMContentLoaded', function() {
-        const navButtons = document.querySelectorAll('.nav-button');
-    
-        navButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                navButtons.forEach(btn => btn.classList.remove('active'));
-    
-                // Add active class to the clicked button
-                button.classList.add('active');
-            });
-        });
-    });
-    
+  
     block.innerHTML = `
     <nav class="navbar">
     ${temp.outerHTML}
