@@ -3,7 +3,7 @@ function createLogoHTML(component) {
     const logoAltText = component.querySelector('[data-aue-prop="grand_vitara_logoalt"]');
     
     if (!logoImg || !logoAltText) return '';
-  
+    
     return `
       <div>
         <div>
@@ -16,9 +16,9 @@ function createLogoHTML(component) {
   
   function createCtaButtonHTML(component) {
     const ctaLinkText = component.querySelector('[data-aue-prop="ctaLinkText"]');
-  
+    
     if (!ctaLinkText) return '';
-  
+    
     return `
       <div>
         <p class="button-container">
@@ -29,24 +29,16 @@ function createLogoHTML(component) {
   }
   
   export default function decorate(block) {
-    const [logoComponent, cta1, cta2, cta3, cta4, cta5] = block.children;
+    const [logoComponent, ...ctas] = block.children;
   
     const logoHTML = logoComponent ? createLogoHTML(logoComponent) : '';
-    const cta1HTML = cta1 ? createCtaButtonHTML(cta1) : '';
-    const cta2HTML = cta2 ? createCtaButtonHTML(cta2) : '';
-    const cta3HTML = cta3 ? createCtaButtonHTML(cta3) : '';
-    const cta4HTML = cta4 ? createCtaButtonHTML(cta4) : '';
-    const cta5HTML = cta5 ? createCtaButtonHTML(cta5) : '';
+    const ctaHTML = ctas.map(cta => createCtaButtonHTML(cta)).join('');
   
     block.innerHTML = `
       <div class="secondary-navigation-wrapper">
         <div class="secondary-navigation block" data-block-name="secondary-navigation" data-block-status="loaded">
           ${logoHTML}
-          ${cta1HTML}
-          ${cta2HTML}
-          ${cta3HTML}
-          ${cta4HTML}
-          ${cta5HTML}
+          ${ctaHTML}
         </div>
       </div>
     `;
