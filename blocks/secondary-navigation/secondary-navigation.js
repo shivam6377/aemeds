@@ -8,8 +8,7 @@ function createLogoHTML(component) {
       <div>
         <div>
           <picture><img src="${logoImg.src}" data-aue-prop="grand_vitara_logo" data-aue-label="Grand Vitara Logo" data-aue-type="media"></picture>
-          <p data-aue-prop="grand_vitara_logoalt" data-aue-label="Grand Vitara Alt Text" data-aue-type="text">${logoAltText.innerText}</p>
-        </div>
+          <p data-aue-prop="grand_vitara_logoalt" data-aue-label="Grand Vitara Alt Text" data-aue-type="text">${logoAltText.innerText}</p></div>
       </div>
     `;
   }
@@ -29,24 +28,16 @@ function createLogoHTML(component) {
   }
   
   export default function decorate(block) {
-    const [logoComponent, cta1, cta2, cta3, cta4, cta5] = block.children;
+    const [logoComponent, ...ctaComponents] = block.children;
   
     const logoHTML = logoComponent ? createLogoHTML(logoComponent) : '';
-    const cta1HTML = cta1 ? createCtaButtonHTML(cta1) : '';
-    const cta2HTML = cta2 ? createCtaButtonHTML(cta2) : '';
-    const cta3HTML = cta3 ? createCtaButtonHTML(cta3) : '';
-    const cta4HTML = cta4 ? createCtaButtonHTML(cta4) : '';
-    const cta5HTML = cta5 ? createCtaButtonHTML(cta5) : '';
+    const ctaHTMLArray = ctaComponents.map(component => createCtaButtonHTML(component)).join('');
   
     block.innerHTML = `
       <div class="secondary-navigation-wrapper">
-        <div class="secondary-navigation block" data-block-name="secondary-navigation" data-block-status="loaded">
+        <div data-aue-resource="urn:aemconnection:/content/xwalk-shivam/test-page-/jcr:content/root/section/block" data-aue-type="container" data-aue-behavior="component" data-aue-model="secondary-navigation" data-aue-label="Secondary Navigation" data-aue-filter="secondary-navigation" class="secondary-navigation block" data-block-name="secondary-navigation" data-block-status="loaded">
           ${logoHTML}
-          ${cta1HTML}
-          ${cta2HTML}
-          ${cta3HTML}
-          ${cta4HTML}
-          ${cta5HTML}
+          ${ctaHTMLArray}
         </div>
       </div>
     `;
