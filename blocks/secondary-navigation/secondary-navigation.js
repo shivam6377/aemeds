@@ -30,6 +30,9 @@ function createLogoHTML(component) {
   
   export default function decorate(block) {
     const [logoComponent, ...ctas] = block.children;
+
+    console.log("Logo Component", logoComponent);
+    console.log("ctaas", ctas);
   
     const logoHTML = logoComponent ? createLogoHTML(logoComponent) : '';
     const ctaHTML = ctas.map(cta => createCtaButtonHTML(cta)).join('');
