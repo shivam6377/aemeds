@@ -37,20 +37,6 @@ button.innerHTML=newButton.outerHTML;
     return buttonsContainer;
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const navButtons = document.querySelectorAll('.nav-button');
-
-    navButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove active class from all buttons
-            navButtons.forEach(btn => btn.classList.remove('active'));
-
-            // Add active class to the clicked button
-            button.classList.add('active');
-        });
-    });
-});
-
 
 
 
@@ -78,5 +64,20 @@ console.log("block", block);
 </nav>
        
     `;
+    document.addEventListener('DOMContentLoaded', function() {
+        const navButtons = document.querySelectorAll('.nav-button');
+    
+        navButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                navButtons.forEach(btn => btn.classList.remove('active'));
+    
+                // Add active class to the clicked button
+                button.classList.add('active');
+            });
+        });
+    });
+    
+    
   }
   
