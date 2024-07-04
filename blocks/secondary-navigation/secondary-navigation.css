@@ -22,8 +22,14 @@ body {
     position: relative; /* Added for positioning the underline */
 }
 
-.logo-container h1 {
-    margin: 0;
+.logo-container {
+    /* Ensure logo doesn't affect navbar height */
+    flex: 0 0 auto; /* Prevent from growing or shrinking */
+}
+
+.logo-container img {
+    height: 50px;
+    width: 100px;
 }
 
 .buttons-container {
