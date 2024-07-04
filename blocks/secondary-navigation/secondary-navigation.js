@@ -10,6 +10,22 @@ function createLogoHTML(component) {
     return ImgContainer;
   }
   
+  function generateButtons(buttons) {
+    const buttonsContainer = document.createElement('div');
+    buttonsContainer.classList.add('buttons-container');
+
+    buttons.forEach(button =>
+        buttonsContainer.appendChild(button)
+        
+   );
+
+    return buttonsContainer;
+}
+
+// Example usage:
+
+
+
   function createCtaButtonHTML(component) {
     const ctaLinkText = component.querySelector('[data-aue-prop="ctaLinkText"]');
     
@@ -30,18 +46,21 @@ console.log("block", block);
     console.log("Logo Component", logoComponent);
     console.log("ctaas", ctas);
     const temp=createLogoHTML(logoComponent);
-    block.innerHTML=temp.outerHTML;
+
+
+    const temp2=generateButtons(ctas);
+   
   
     // const logoHTML = logoComponent ? createLogoHTML(logoComponent) : '';
     // const ctaHTML = ctas.map(cta => createCtaButtonHTML(cta)).join('');
   
-    // block.innerHTML = `
-    //   <div class="secondary-navigation-wrapper">
-    //     <div class="secondary-navigation block" data-block-name="secondary-navigation" data-block-status="loaded">
-    //       ${logoHTML}
-    //       ${ctaHTML}
-    //     </div>
-    //   </div>
-    // `;
+    block.innerHTML = `
+    <nav class="navbar">
+    ${temp.outerHTML}
+    
+    ${temp2.outerHTML}
+</nav>
+       
+    `;
   }
   
