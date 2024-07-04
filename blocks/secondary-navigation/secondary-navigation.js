@@ -1,16 +1,17 @@
 function createLogoHTML(component) {
     const logoImg = component.querySelector('[data-aue-prop="grand_vitara_logo"]');
     
-  const ImgContainer = document.createElement('div');
-  ImgContainer.classList.add('logo-container');
+    const ImgContainer = document.createElement('div');
+    ImgContainer.classList.add('logo-container');
     
-  const picture = document.createElement('picture');
- picture.appendChild(logoImg);
+    const picture = document.createElement('picture');
+    picture.appendChild(logoImg);
     ImgContainer.appendChild(picture);
+    
     return ImgContainer;
-  }
-  
-  function generateButtons(buttons) {
+}
+
+function generateButtons(buttons) {
     const buttonsContainer = document.createElement('div');
     buttonsContainer.classList.add('buttons-container');
 
@@ -20,8 +21,8 @@ function createLogoHTML(component) {
         
         // Create a new <a> element with appropriate classes
         const newButton = document.createElement('a');
-        newButton.href = a.href; // Set href if needed
-        newButton.textContent = a.textContent; // Copy text content
+        newButton.href = a ? a.href : '#'; // Set href if needed
+        newButton.textContent = a ? a.textContent : 'Button'; // Copy text content
         
         // Add classes based on index (assuming first button should be active)
         if (index === 0) {
@@ -29,10 +30,13 @@ function createLogoHTML(component) {
         } else {
             newButton.classList.add('nav-button');
         }
-button.innerHTML=newButton.outerHTML;
-        // Append the new <a> element to buttonsContainer
+
+        // Clear existing content and add newButton
+        button.innerHTML = '';
+        button.appendChild(newButton);
+        
+        // Append the button to buttonsContainer
         buttonsContainer.appendChild(button);
-       
     });
 
     return buttonsContainer;
@@ -50,35 +54,19 @@ function setupNavButtons(navButtons) {
     });
 }
 
-
-
-
-  
-  export default function decorate(block) {
+export default function decorate(block) {
     const [logoComponent, ...ctas] = block.children;
 
-  
-    const temp=createLogoHTML(logoComponent);
+    const temp = createLogoHTML(logoComponent);
+    const temp2 = generateButtons(ctas);
 
-
-    const temp2=generateButtons(ctas);
-   
-  
-  
-  
     block.innerHTML = `
-    <nav class="navbar">
-    ${temp.outerHTML}
-    
-    ${temp2.outerHTML}
-</nav>
-       
+        <nav class="navbar">
+            ${temp.outerHTML}
+            ${temp2.outerHTML}
+        </nav>
     `;
- 
-        
-const navbarbuttons=block.querySelectorAll('.nav-button')    
-setupNavButtons(navbarbuttons);
 
-    
-  }
-  
+    const navbarbuttons = block.querySelectorAll('.nav-button');
+    setupNavButtons(navbarbuttons);
+}
