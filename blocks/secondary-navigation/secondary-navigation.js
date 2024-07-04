@@ -21,8 +21,8 @@ function generateButtons(buttons) {
         
         // Create a new <a> element with appropriate classes
         const newButton = document.createElement('a');
-        newButton.href = a ? a.href : '#'; // Set href if needed
-        newButton.textContent = a ? a.textContent : 'Button'; // Copy text content
+        newButton.href = a ? a.href : ''; // Set href if needed
+        newButton.textContent = a ? a.textContent : ''; // Copy text content
         
         // Add classes based on index (assuming first button should be active)
         if (index === 0) {
