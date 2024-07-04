@@ -57,13 +57,13 @@ function setupNavButtons(navButtons) {
 export default function decorate(block) {
     const [logoComponent, ...ctas] = block.children;
 
-    const temp = createLogoHTML(logoComponent);
-    const temp2 = generateButtons(ctas);
+    const secondarylogo = createLogoHTML(logoComponent);
+    const secondarycta = generateButtons(ctas);
 
     block.innerHTML = `
         <nav class="navbar">
-            ${temp.outerHTML}
-            ${temp2.outerHTML}
+            ${secondarylogo.outerHTML}
+            ${secondarycta.outerHTML}
         </nav>
     `;
 
