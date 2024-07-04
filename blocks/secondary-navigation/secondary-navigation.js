@@ -32,6 +32,7 @@ function createLogoHTML(component) {
 button.innerHTML=newButton.outerHTML;
         // Append the new <a> element to buttonsContainer
         buttonsContainer.appendChild(button);
+       
     });
 
     return buttonsContainer;
@@ -45,9 +46,8 @@ button.innerHTML=newButton.outerHTML;
   
   export default function decorate(block) {
     const [logoComponent, ...ctas] = block.children;
-console.log("block", block);
-    console.log("Logo Component", logoComponent);
-    console.log("ctaas", ctas[0].outerHTML);
+
+  
     const temp=createLogoHTML(logoComponent);
 
 
@@ -64,20 +64,11 @@ console.log("block", block);
 </nav>
        
     `;
-    block.addEventListener('DOMContentLoaded', function() {
-        const navButtons = block.querySelectorAll('.nav-button');
-    
-        navButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                navButtons.forEach(btn => btn.classList.remove('active'));
-    
-                // Add active class to the clicked button
-                button.classList.add('active');
-            });
-        });
-    });
-    
+ 
+        
+const navbarbuttons=block.querySelectorAll('.nav-button')    
+console.log(navbarbuttons);    
+       
     
   }
   
