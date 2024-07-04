@@ -7,7 +7,6 @@ function createLogoHTML(component) {
   const picture = document.createElement('picture');
  picture.appendChild(logoImg);
     ImgContainer.appendChild(picture);
-    
     return ImgContainer;
   }
   
