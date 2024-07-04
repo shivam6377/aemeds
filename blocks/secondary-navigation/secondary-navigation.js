@@ -1,17 +1,13 @@
 function createLogoHTML(component) {
     const logoImg = component.querySelector('[data-aue-prop="grand_vitara_logo"]');
-    const logoAltText = component.querySelector('[data-aue-prop="grand_vitara_logoalt"]');
     
-    if (!logoImg || !logoAltText) return '';
+  const ImgContainer = document.createElement('div');
+  ImgContainer.classList.add('logo-container');
     
-    return `
-      <div>
-        <div>
-          <picture><img src="${logoImg.src}" data-aue-prop="grand_vitara_logo" data-aue-label="Grand Vitara Logo" data-aue-type="media"></picture>
-          <p data-aue-prop="grand_vitara_logoalt" data-aue-label="Grand Vitara Alt Text" data-aue-type="text">${logoAltText.innerText}</p>
-        </div>
-      </div>
-    `;
+  const picture = document.createElement('picture');
+ picture.appendChild(logoImg);
+    ImgContainer.appendChild(picture);
+    return ImgContainer;
   }
   
   function createCtaButtonHTML(component) {
@@ -33,6 +29,8 @@ function createLogoHTML(component) {
 console.log("block", block);
     console.log("Logo Component", logoComponent);
     console.log("ctaas", ctas);
+    const temp=createLogoHTML(logoComponent);
+    block.innerHTML=temp.outerHTML;
   
     // const logoHTML = logoComponent ? createLogoHTML(logoComponent) : '';
     // const ctaHTML = ctas.map(cta => createCtaButtonHTML(cta)).join('');
