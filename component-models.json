@@ -451,7 +451,7 @@
         },
         {
           "component": "text",
-          "name": "grand_vitara_logoalt",
+          "name": "grand_vitara_logoAlt",
           "value": "",
           "label": "Grand Vitara Alt Text",
           "valueType": "string"
