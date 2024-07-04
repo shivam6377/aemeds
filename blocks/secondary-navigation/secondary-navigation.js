@@ -29,9 +29,9 @@ function createLogoHTML(component) {
         } else {
             newButton.classList.add('nav-button');
         }
-
+button.innerHTML=newButton.outerHTML;
         // Append the new <a> element to buttonsContainer
-        buttonsContainer.appendChild(newButton);
+        buttonsContainer.appendChild(button);
     });
 
     return buttonsContainer;
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Example usage:
+
 
 
 
@@ -68,8 +68,7 @@ console.log("block", block);
     const temp2=generateButtons(ctas);
    
   
-    // const logoHTML = logoComponent ? createLogoHTML(logoComponent) : '';
-    // const ctaHTML = ctas.map(cta => createCtaButtonHTML(cta)).join('');
+  
   
     block.innerHTML = `
     <nav class="navbar">
