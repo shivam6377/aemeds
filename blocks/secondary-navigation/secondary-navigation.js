@@ -64,8 +64,8 @@ console.log("block", block);
 </nav>
        
     `;
-    document.addEventListener('DOMContentLoaded', function() {
-        const navButtons = document.querySelectorAll('.nav-button');
+    block.addEventListener('DOMContentLoaded', function() {
+        const navButtons = block.querySelectorAll('.nav-button');
     
         navButtons.forEach(button => {
             button.addEventListener('click', function() {
