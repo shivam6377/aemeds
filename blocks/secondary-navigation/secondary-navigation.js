@@ -1,71 +1,54 @@
-function createSecondaryNavBlock(block) {
-    const secondaryNavWrapper = document.createElement('div');
-    secondaryNavWrapper.classList.add('secondary-navigation-wrapper');
+function createLogoHTML(component) {
+    const logoImg = component.querySelector('[data-aue-prop="grand_vitara_logo"]');
+    const logoAltText = component.querySelector('[data-aue-prop="grand_vitara_logoalt"]');
+    
+    if (!logoImg || !logoAltText) return '';
   
-    const secondaryNavBlock = document.createElement('div');
-    secondaryNavBlock.classList.add('secondary-navigation', 'block');
-    secondaryNavBlock.setAttribute('data-block-name', 'secondary-navigation');
-    secondaryNavBlock.setAttribute('data-block-status', 'loaded');
+    return `
+      <div>
+        <div>
+          <picture><img src="${logoImg.src}" data-aue-prop="grand_vitara_logo" data-aue-label="Grand Vitara Logo" data-aue-type="media"></picture>
+          <p data-aue-prop="grand_vitara_logoalt" data-aue-label="Grand Vitara Alt Text" data-aue-type="text">${logoAltText.innerText}</p>
+        </div>
+      </div>
+    `;
+  }
   
-    // Add the logo section
-    const logoContainer = document.createElement('div');
-    const logoDiv = document.createElement('div');
-    const logoPicture = document.createElement('picture');
-    const logoImg = document.createElement('img');
-    const logoSrc = block.querySelector('[data-aue-prop="grand_vitara_logo"]').getAttribute('src');
-    logoImg.src = logoSrc;
-    logoImg.setAttribute('data-aue-prop', 'grand_vitara_logo');
-    logoImg.setAttribute('data-aue-label', 'Grand Vitara Logo');
-    logoImg.setAttribute('data-aue-type', 'media');
+  function createCtaButtonHTML(component) {
+    const ctaLinkText = component.querySelector('[data-aue-prop="ctaLinkText"]');
   
-    const logoAltText = document.createElement('p');
-    const logoAlt = block.querySelector('[data-aue-prop="grand_vitara_logoalt"]').innerText;
-    logoAltText.textContent = logoAlt;
-    logoAltText.setAttribute('data-aue-prop', 'grand_vitara_logoalt');
-    logoAltText.setAttribute('data-aue-label', 'Grand Vitara Alt Text');
-    logoAltText.setAttribute('data-aue-type', 'text');
+    if (!ctaLinkText) return '';
   
-    logoPicture.appendChild(logoImg);
-    logoDiv.appendChild(logoPicture);
-    logoDiv.appendChild(logoAltText);
-    logoContainer.appendChild(logoDiv);
-    secondaryNavBlock.appendChild(logoContainer);
-  
-    // Function to create CTA buttons
-    function createCtaButton(cta) {
-      const ctaDiv = document.createElement('div');
-      const buttonContainer = document.createElement('p');
-      buttonContainer.classList.add('button-container');
-      const ctaLink = document.createElement('a');
-      ctaLink.href = '#';
-      ctaLink.classList.add('button');
-      ctaLink.title = cta.title;
-      ctaLink.textContent = cta.text;
-      ctaLink.setAttribute('data-aue-prop', 'ctaLinkText');
-      ctaLink.setAttribute('data-aue-label', 'CTA Text');
-      ctaLink.setAttribute('data-aue-type', 'text');
-      buttonContainer.appendChild(ctaLink);
-      ctaDiv.appendChild(buttonContainer);
-      return ctaDiv;
-    }
-  
-    // Fetch CTA buttons dynamically
-    const ctaComponents = block.querySelectorAll('[data-aue-model="cta"]');
-    ctaComponents.forEach(ctaComponent => {
-      const title = ctaComponent.querySelector('[data-aue-prop="ctaLinkText"]').innerText;
-      const text = ctaComponent.querySelector('[data-aue-prop="ctaLinkText"]').innerText;
-      const ctaButton = createCtaButton({ title, text });
-      secondaryNavBlock.appendChild(ctaButton);
-    });
-  
-    // Append the secondary navigation block to the wrapper
-    secondaryNavWrapper.appendChild(secondaryNavBlock);
-  
-    // Finally, append the entire secondary navigation to the block
-    block.appendChild(secondaryNavWrapper);
+    return `
+      <div>
+        <p class="button-container">
+          <a href="#" data-aue-prop="ctaLinkText" data-aue-label="CTA Text" data-aue-type="text" title="${ctaLinkText.title}" class="button">${ctaLinkText.innerText}</a>
+        </p>
+      </div>
+    `;
   }
   
   export default function decorate(block) {
-    createSecondaryNavBlock(block);
+    const [logoComponent, cta1, cta2, cta3, cta4, cta5] = block.children;
+  
+    const logoHTML = logoComponent ? createLogoHTML(logoComponent) : '';
+    const cta1HTML = cta1 ? createCtaButtonHTML(cta1) : '';
+    const cta2HTML = cta2 ? createCtaButtonHTML(cta2) : '';
+    const cta3HTML = cta3 ? createCtaButtonHTML(cta3) : '';
+    const cta4HTML = cta4 ? createCtaButtonHTML(cta4) : '';
+    const cta5HTML = cta5 ? createCtaButtonHTML(cta5) : '';
+  
+    block.innerHTML = `
+      <div class="secondary-navigation-wrapper">
+        <div class="secondary-navigation block" data-block-name="secondary-navigation" data-block-status="loaded">
+          ${logoHTML}
+          ${cta1HTML}
+          ${cta2HTML}
+          ${cta3HTML}
+          ${cta4HTML}
+          ${cta5HTML}
+        </div>
+      </div>
+    `;
   }
   
