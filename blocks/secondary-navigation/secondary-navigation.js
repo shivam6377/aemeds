@@ -7,6 +7,8 @@ function createLogoHTML(component) {
   const picture = document.createElement('picture');
  picture.appendChild(logoImg);
     ImgContainer.appendChild(picture);
+      
+    if (!logoImg) return '';
     return ImgContainer;
   }
   
@@ -34,7 +36,7 @@ button.innerHTML=newButton.outerHTML;
         buttonsContainer.appendChild(button);
        
     });
-
+    if (!ctaLinkText) return '';
     return buttonsContainer;
 }
 
