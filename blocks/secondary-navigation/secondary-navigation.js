@@ -34,16 +34,16 @@ function createLogoHTML(component) {
     console.log("Logo Component", logoComponent);
     console.log("ctaas", ctas);
   
-    const logoHTML = logoComponent ? createLogoHTML(logoComponent) : '';
-    const ctaHTML = ctas.map(cta => createCtaButtonHTML(cta)).join('');
+    // const logoHTML = logoComponent ? createLogoHTML(logoComponent) : '';
+    // const ctaHTML = ctas.map(cta => createCtaButtonHTML(cta)).join('');
   
-    block.innerHTML = `
-      <div class="secondary-navigation-wrapper">
-        <div class="secondary-navigation block" data-block-name="secondary-navigation" data-block-status="loaded">
-          ${logoHTML}
-          ${ctaHTML}
-        </div>
-      </div>
-    `;
+    // block.innerHTML = `
+    //   <div class="secondary-navigation-wrapper">
+    //     <div class="secondary-navigation block" data-block-name="secondary-navigation" data-block-status="loaded">
+    //       ${logoHTML}
+    //       ${ctaHTML}
+    //     </div>
+    //   </div>
+    // `;
   }
   
