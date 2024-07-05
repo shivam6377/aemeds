@@ -21,30 +21,16 @@ export default function decorate(block) {
     }).join('');
 
     block.innerHTML = `
-        <div class="widget">
-            <div class="widget__icon">
+    <nav class="navbar">
+    <div class="logo-container">
                 <img src="${imageSrc}" alt="${imageAlt}" class="icon"/>
             </div>
-            <div class="widget__links">
+            <div class="buttons-container">
                 <ul>
                     ${ctaElements}
                 </ul>
             </div>
-        </div>
+        </nav>
     `;
 
-    // Add hover logic with JavaScript
-    const widgetElement = block.querySelector('.widget');
-    const widgetLinksElement = block.querySelector('.widget__links');
-
-    widgetElement.addEventListener('mouseenter', () => {
-        widgetLinksElement.style.display = 'block';
-    });
-
-    widgetElement.addEventListener('mouseleave', () => {
-        widgetLinksElement.style.display = 'none';
-    });
-
-    // Initially hide the widget links
-    widgetLinksElement.style.display = 'none';
 }
