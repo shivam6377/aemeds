@@ -5,7 +5,7 @@ export default function decorate(block) {
     const [imageSection, ...ctaSections] = block.children;
 
     const imageSrc = imageSection.querySelector('img')?.src;
-    const imageAlt = imageSection.querySelector('img')?.alt || 'Widget';
+    const imageAlt = imageSection.querySelector('img')?.alt || 'navbar';
 
     const ctaElements = ctaSections.map(section => {
         const linkElement = section.querySelector('.button-container a');
@@ -21,16 +21,17 @@ export default function decorate(block) {
     }).join('');
 
     block.innerHTML = `
-        <div class="widget">
-            <div class="widget__icon">
-                <img src="${imageSrc}" alt="${imageAlt}" class="icon"/>
+    <nav class="navbar">
+    <div class="logo-container">
+                <img src="${imageSrc}" alt="${imageAlt}"/>
             </div>
-            <div class="widget__links">
+            <div class="buttons-container">
                 <ul>
                     ${ctaElements}
                 </ul>
             </div>
-        </div>
+        </nav>
+    `;
     `;
 
 }
