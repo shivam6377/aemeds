@@ -9,19 +9,19 @@ export default function decorate(block) {
 
     // Generate cta elements
     const ctaElements = ctaSections
-        .filter(section => section.querySelector('.button-container a')) // Filter out sections without .button-container a
-        .map(section => {
-            const linkElement = section.querySelector('.button-container a');
-            const link = linkElement.href || '#';
-            const linkText = linkElement.textContent?.trim() || '';
-            const linkTitle = linkElement.title || '';
+        .map((element)  => {
+            const [ ctaTextEl, linkEl] = element.children;
+            const ctaText = ctaTextEl?.textContent?.trim() || '';
+            const link = linkEl?.querySelector('.button-container a')?.href;
 
-            return `
+            element.innerHTML = ` 
                 <li>
-                    <a href="${link}" title="${linkTitle}" class="button">${linkText}</a>
+                    <a href="${link}" class="button">${ctaText}</a>
                 </li>
             `;
+            return element.innerHTML;
         })
+        
         .join('');
 
     // Construct the navbar HTML
