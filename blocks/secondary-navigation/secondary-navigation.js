@@ -9,7 +9,7 @@ export default function decorate(block) {
     const ctaElements = ctaSections.map(section => {
         const linkElement = section.querySelector('.button-container a');
         const link = linkElement?.href || '#';
-        const linkText = linkElement?.dataset.ctaLinkText?.trim() || '';
+        const linkText = linkElement?.getAttribute('data-cta-link-text')?.trim() || linkElement?.textContent?.trim() || '';
         const linkTitle = linkElement?.title || '';
 
         return `
