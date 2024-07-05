@@ -21,16 +21,16 @@ export default function decorate(block) {
     }).join('');
 
     block.innerHTML = `
-    <nav class="navbar">
-    <div class="logo-container">
-                <img src="${imageSrc}" alt="${imageAlt}"/>
+        <div class="widget">
+            <div class="widget__icon">
+                <img src="${imageSrc}" alt="${imageAlt}" class="icon"/>
             </div>
-            <div class="buttons-container">
+            <div class="widget__links">
                 <ul>
                     ${ctaElements}
                 </ul>
             </div>
-        </nav>
+        </div>
     `;
 
 }
