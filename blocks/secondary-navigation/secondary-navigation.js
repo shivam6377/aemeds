@@ -1,8 +1,8 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
-    const navBlock = block.querySelector('.secondary-navigation.block');
-    const [imageSection, ...ctaSections] = navBlock.children;
+    const block = block.querySelector('.secondary-navigation.block');
+    const [imageSection, ...ctaSections] = block.children;
 
     const imageSrc = imageSection.querySelector('img')?.src;
     const imageAlt = imageSection.querySelector('img')?.alt || 'Widget';
@@ -33,18 +33,4 @@ export default function decorate(block) {
         </div>
     `;
 
-    // Add hover logic with JavaScript
-    const widgetElement = block.querySelector('.widget');
-    const widgetLinksElement = block.querySelector('.widget__links');
-
-    widgetElement.addEventListener('mouseenter', () => {
-        widgetLinksElement.style.display = 'block';
-    });
-
-    widgetElement.addEventListener('mouseleave', () => {
-        widgetLinksElement.style.display = 'none';
-    });
-
-    // Initially hide the widget links
-    widgetLinksElement.style.display = 'none';
 }
