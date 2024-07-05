@@ -11,7 +11,7 @@ export default function decorate(block) {
         const linkElement = section.querySelector('.button-container a');
         const link = linkElement?.href || '#';
         const linkText = linkElement?.textContent?.trim() || '';
-        const linkTitle = linkElement?.title || '';
+        
 
         return `
             <li>
