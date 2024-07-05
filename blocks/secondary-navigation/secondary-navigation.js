@@ -5,7 +5,7 @@ export default function decorate(block) {
     const [imageSection, ...ctaSections] = block.children;
 
     const imageSrc = imageSection.querySelector('img')?.src;
-    const imageAlt = imageSection.querySelector('img')?.alt || 'Widget';
+    const imageAlt = imageSection.querySelector('img')?.alt || '';
 
     const ctaElements = ctaSections.map(section => {
         const linkElement = section.querySelector('a');
@@ -15,7 +15,7 @@ export default function decorate(block) {
 
         return `
         
-                <a href="${link}" title="${linkTitle}" class="button">${linkText}</a>
+                <a href="${link}" title="${linkTitle}" class="nav-button">${linkText}</a>
          
         `;
     }).join('');
