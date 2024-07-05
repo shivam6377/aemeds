@@ -433,7 +433,7 @@
     "fields": [
       {
         "component": "text-input",
-        "name": "ctaText",
+        "name": "ctaLinkText",
         "label": "CTA Text",
         "valueType": "string"
       },
@@ -2182,7 +2182,20 @@
   {
     "id": "secondary-navigation",
     "fields": [
-    
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "logoImage",
+        "label": "Logo Image",
+        "multi": false
+      },
+      {
+        "component": "text-input",
+        "name": "logoImageAlt",
+        "value": "",
+        "label": "Alt Text",
+        "valueType": "string"
+      }
     ]
   }
 ]

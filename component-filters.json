@@ -196,7 +196,6 @@
   {
     "id": "secondary-navigation",
     "components": [
-      "logo",
       "cta"
       
     ]
