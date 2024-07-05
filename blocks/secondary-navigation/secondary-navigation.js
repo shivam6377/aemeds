@@ -11,13 +11,13 @@ export default function decorate(block) {
     const ctaElements = ctaSections
         .map((element)  => {
             const [ ctaTextEl, linkEl] = element.children;
-            const ctaLinkText = ctaTextEl?.textContent?.trim() || '';
+            const ctaText = ctaTextEl?.textContent?.trim() || '';
             const link = linkEl?.querySelector('.button-container a')?.href;
 
             element.innerHTML = ` 
-                <li>
-                    <a href="${link}" class="button">${ctaLinkText}</a>
-                </li>
+              
+                    <a href="${link}" class="button">  <p>${ctaText}</p></a>
+               
             `;
             return element.innerHTML;
         })
