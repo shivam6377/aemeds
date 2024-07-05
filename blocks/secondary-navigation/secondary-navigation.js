@@ -8,7 +8,7 @@ export default function decorate(block) {
     const imageAlt = imageSection.querySelector('img')?.alt || 'Widget';
 
     const ctaElements = ctaSections.map(section => {
-        const linkElement = section.querySelector('a');
+        const linkElement = section.querySelector('.button-container a');
         const link = linkElement?.href || '#';
         const linkText = linkElement?.textContent?.trim() || '';
         const linkTitle = linkElement?.title || '';
