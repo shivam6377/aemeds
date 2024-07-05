@@ -433,7 +433,7 @@
     "fields": [
       {
         "component": "text-input",
-        "name": "ctaText",
+        "name": "ctaLinkText",
         "label": "CTA Text",
         "valueType": "string"
       },

@@ -14,9 +14,9 @@ export default function decorate(block) {
         const linkTitle = linkElement?.title || '';
 
         return `
-            <li>
+          
                 <a href="${link}" title="${linkTitle}" class="button">${linkText}</a>
-            </li>
+            
         `;
     }).join('');
 
@@ -26,9 +26,9 @@ export default function decorate(block) {
                 <img src="${imageSrc}" alt="${imageAlt}"/>
             </div>
             <div class="buttons-container">
-                <ul>
+               
                     ${ctaElements}
-                </ul>
+             
             </div>
         </nav>
     `;
