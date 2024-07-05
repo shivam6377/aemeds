@@ -15,7 +15,7 @@ export default function decorate(block) {
 
         return `
         
-                <a href="${link}" title="${linkTitle}" class="nav-button">${linkText}</a>
+                <a href="${link}" title="${linkTitle}" class="button">${linkText}</a>
          
         `;
     }).join('');
