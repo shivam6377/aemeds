@@ -15,7 +15,10 @@
       "text",
       "image",
       "button",
-      "title"
+      "title",
+      "teaser",
+      "columns",
+      "links"
     ]
   },
   {
@@ -29,9 +32,48 @@
       "cards",
       "columns",
       "quote",
-      "offers",
-      "testBlock",
-      "secondary-navigation"
+      "personal",
+      "teaser",
+      "list",
+      "carousel",
+      "3dConfigurator",
+      "3dConfigurator-js",
+      "container",
+      "customColumns",
+      "links",
+      "visual-comparison",
+      "visual-comparison-blob",
+      "link-grid",
+      "logo",
+      "teaser-list",
+      "sign-in",
+      "nav-cars",
+      "nav-compare",
+      "search",
+      "contact",
+      "nitesh-test",
+      "immersive-teaser",
+      "icontitle",
+      "test-teaser",
+      "highlight-tabs",
+      "widget",
+      "nexa-world",
+      "location",
+      "nexa-hero-banner",
+      "nexa-eshowroom-experience",
+      "banner-carousel",
+      "car-filter",
+      "slider",
+      "highlights",
+      "finance-options",
+      "arena-help-me-select",
+      "intro-to-design-car-detail"
+    ]
+  },
+  {
+    "id": "customSection",
+    "components": [
+      "list"
     ]
   },
   {
@@ -41,15 +83,121 @@
     ]
   },
   {
-    "id": "offers",
+    "id": "list",
     "components": [
-      "offer-component"
+      "listItem"
+    ]
+  },
+  {
+    "id": "teaser",
+    "components": [
+      "cta"
+    ]
+  },
+  {
+    "id": "carousel",
+    "components": [
+      "cta",
+      "teaser"
+    ]
+  },
+  {
+    "id": "listItem",
+    "components": [
+      "cta"
+    ]
+  },
+  {
+    "id": "links",
+    "components": [
+      "linkItem",
+      "linkgrid"
+    ]
+  },
+  {
+    "id": "teaser-list",
+    "components": [
+      "teaser"
+    ]
+  },
+  {
+    "id": "sign-in",
+    "components": [
+      "ctaWithIcon"
+    ]
+  },
+  {
+    "id": "contact",
+    "components": [
+      "ctaWithIcon"
+    ]
+  },
+  {
+    "id": "immersive-teaser",
+    "components": [
+      "teaser"
+    ]
+  },
+  {
+    "id": "highlight-tabs",
+    "components": [
+      "highlight-item"
+    ]
+  },
+  {
+    "id": "widget",
+    "components": [
+      "ctaWithIcon"
+    ]
+  },
+  {
+    "id": "nexa-world",
+    "components": [
+      "ctaWithIcon"
+    ]
+  },
+  {
+    "id": "nexa-hero-banner",
+    "components": [
+      "nexa-hero-banner-item"
+    ]
+  },
+  {
+    "id": "banner-carousel",
+    "components": [
+      "banner-carousel-car"
+    ]
+  },
+  {
+    "id": "nexa-eshowroom-experience",
+    "components": [
+      "nexa-eshowroom-experience-item"
+    ]
+  },
+  {
+    "id": "slider",
+    "components": [
+      "teaser"
+    ]
+  },
+  {
+    "id": "highlights",
+    "components": [
+      "highlight"
+    ]
+  },
+  {
+    "id": "finance-options",
+    "components": [
+      "teaser"
     ]
   },
   {
     "id": "secondary-navigation",
     "components": [
+      "logo",
       "cta"
+      
     ]
   }
 ]
