@@ -1,7 +1,7 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
-   
+    const block = block.querySelector('.secondary-navigation.block');
     const [imageSection, ...ctaSections] = block.children;
 
     const imageSrc = imageSection.querySelector('img')?.src;
