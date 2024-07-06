@@ -1,40 +1,39 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
-
 export default function decorate(block) {
-    // Extract the logo and buttons container
-    const [logoContainerEl, buttonsContainerEl] = block.children;
+    const [imageEl, imageAltTextEl, ...ctasEl] = block.children;
+    const imageSrc = imageEl?.querySelector('img')?.src;
+    const alt = imageAltTextEl?.querySelector('img')?.alt || 'Widget';
+    const ctaElements = ctasEl.map((element) => {
+        const [ ctaTextEl, linkEl] = element.children;
+        
+        const ctaText = ctaTextEl?.textContent?.trim() || '';
+        const link = linkEl?.querySelector('.button-container a')?.href;
+        
 
-    // Logo processing
-
-    const imageSrc =logoContainerEl.querySelector('img')?.src;
-    const imageAlt = logoContainerEl.querySelector('img')?.alt || '';
-
-    // Button processing
-    const buttonElements = buttonsContainerEl?.querySelectorAll('.nav-button') || [];
-    const buttonsHTML = Array.from(buttonElements).map((button) => {
-        const href = button?.href || '#';
-        const buttonText = button?.textContent?.trim() || '';
-        const isActive = button.classList.contains('active') ? 'active' : '';
-
-        return `
-        <a href="${href}" class="nav-button ${isActive}">
-            ${buttonText}
-        </a>
+        element.innerHTML = `
+        <li>
+            <a href="${link}" class="user__account--link">
+               
+                <p>${ctaText}</p>
+            </a>
+        </li>
         `;
+        moveInstrumentation(element, element.firstElementChild);
+        return element.innerHTML;
     }).join('');
 
-    // Construct the new HTML structure
     block.innerHTML = `
     <nav class="navbar">
-        <div class="logo-container">
-        <img src="${imageSrc}" alt="${imageAlt}"/>
+    <div class="logo-container">
+            <img src="${imageSrc}" alt="${alt}">
+         
         </div>
         <div class="buttons-container">
-            ${buttonsHTML}
+            <ul>
+                ${ctaElements}
+            </ul>
         </div>
-    </nav>
-    `;
-
-    // Optionally add moveInstrumentation if needed
-    moveInstrumentation(block, block.querySelector('.navbar'));
+        </nav>
+        `;
+ 
 }
