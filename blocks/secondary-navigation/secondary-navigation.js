@@ -1,49 +1,40 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
-    const navWrapper = block.querySelector('.secondary-navigation-wrapper');
-    const navBlock = navWrapper?.querySelector('.secondary-navigation');
+    // Extract the logo and buttons container
+    const [logoContainerEl, buttonsContainerEl] = block.children;
 
-    // Extract image element
-    const imageEl = navBlock?.querySelector('picture img');
-    const imageSrc = imageEl?.src || '';
-    const imageAlt = imageEl?.alt || 'Widget';
+    // Logo processing
 
-    // Extract call to action elements
-    const ctaElements = Array.from(navBlock?.children || []).slice(1);
-    const ctasHTML = ctaElements.map((element) => {
-        const textEl = element.querySelector('p');
-        const linkEl = element.querySelector('.button-container a');
-        
-        const ctaText = textEl?.textContent?.trim() || '';
-        const link = linkEl?.href || '#';
+    const imageSrc =logoContainerEl.querySelector('img')?.src;
+    const imageAlt = logoContainerEl.querySelector('img')?.alt || '';
+
+    // Button processing
+    const buttonElements = buttonsContainerEl?.querySelectorAll('.nav-button') || [];
+    const buttonsHTML = Array.from(buttonElements).map((button) => {
+        const href = button?.href || '#';
+        const buttonText = button?.textContent?.trim() || '';
+        const isActive = button.classList.contains('active') ? 'active' : '';
 
         return `
-        <div>
-            <div><p>${ctaText}</p></div>
-            <div><p class="button-container"><a href="${link}" title="${ctaText}" class="button">${ctaText}</a></p></div>
-        </div>
+        <a href="${href}" class="nav-button ${isActive}">
+            ${buttonText}
+        </a>
         `;
     }).join('');
 
     // Construct the new HTML structure
     block.innerHTML = `
-    <div class="secondary-navigation-container">
-        <div class="secondary-navigation-wrapper">
-            <div class="secondary-navigation block" data-block-name="secondary-navigation" data-block-status="loaded">
-                <div>
-                    <div>
-                        <picture>
-                            ${imageEl.outerHTML}
-                        </picture>
-                    </div>
-                </div>
-                ${ctasHTML}
-            </div>
+    <nav class="navbar">
+        <div class="logo-container">
+        <img src="${imageSrc}" alt="${imageAlt}"/>
         </div>
-    </div>
+        <div class="buttons-container">
+            ${buttonsHTML}
+        </div>
+    </nav>
     `;
 
     // Optionally add moveInstrumentation if needed
-    moveInstrumentation(block, block.querySelector('.secondary-navigation'));
+    moveInstrumentation(block, block.querySelector('.navbar'));
 }
