@@ -31,7 +31,18 @@ export default function decorate(block) {
 
         return element.innerHTML;
     }).join('');
-
+    function setupNavButtons(navButtons) {
+        navButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons
+                navButtons.forEach(btn => btn.classList.remove('active'));
+    
+                // Add active class to the clicked button
+                button.classList.add('active');
+            });
+        });
+    }
+    
     block.innerHTML = `
     <nav class="navbar">
         <div class="logo-container">
@@ -42,4 +53,6 @@ export default function decorate(block) {
         </div>
     </nav>
     `;
+    const navbarbuttons = block.querySelectorAll('.nav-button');
+    setupNavButtons(navbarbuttons);
 }
