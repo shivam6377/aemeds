@@ -1,4 +1,4 @@
-import { moveInstrumentation } from '../../scripts/scripts.js';
+
 export default function decorate(block) {
     const [imageEl, imageAltTextEl, ...ctasEl] = block.children;
     const imageSrc = imageEl?.querySelector('img')?.src;
@@ -17,7 +17,7 @@ export default function decorate(block) {
                 <p>${ctaText}</p>
        
         `;
-        moveInstrumentation(element, element.firstElementChild);
+       
         return element.innerHTML;
     }).join('');
 
