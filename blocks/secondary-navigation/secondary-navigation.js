@@ -12,7 +12,7 @@ export default function decorate(block) {
 
         element.innerHTML = `
        
-            <a href="${link}" class="user__account--link">
+            <a href="${link}" class="nav-button">
                
                 <p>${ctaText}</p>
        
