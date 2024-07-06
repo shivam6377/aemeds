@@ -2,7 +2,7 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 export default function decorate(block) {
     const [imageEl, imageAltTextEl, ...ctasEl] = block.children;
     const imageSrc = imageEl?.querySelector('img')?.src;
-    const alt = imageAltTextEl?.querySelector('img')?.alt || 'Widget';
+    const alt = imageAltTextEl?.querySelector('img')?.alt || 'navbar';
     const ctaElements = ctasEl.map((element) => {
         const [ ctaTextEl, linkEl] = element.children;
         
@@ -11,12 +11,11 @@ export default function decorate(block) {
         
 
         element.innerHTML = `
-        <li>
+       
             <a href="${link}" class="user__account--link">
                
                 <p>${ctaText}</p>
-            </a>
-        </li>
+       
         `;
         moveInstrumentation(element, element.firstElementChild);
         return element.innerHTML;
@@ -29,9 +28,9 @@ export default function decorate(block) {
          
         </div>
         <div class="buttons-container">
-            <ul>
+    
                 ${ctaElements}
-            </ul>
+          
         </div>
         </nav>
         `;
