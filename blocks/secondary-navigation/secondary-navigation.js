@@ -5,7 +5,9 @@ export default function decorate(block) {
     const [logoContainerEl, buttonsContainerEl] = block.children;
 
     // Logo processing
-    const logoText = logoContainerEl?.querySelector('h1')?.textContent?.trim() || 'Logo';
+
+    const imageSrc =logoContainerEl.querySelector('img')?.src;
+    const imageAlt = logoContainerEl.querySelector('img')?.alt || '';
 
     // Button processing
     const buttonElements = buttonsContainerEl?.querySelectorAll('.nav-button') || [];
@@ -25,7 +27,7 @@ export default function decorate(block) {
     block.innerHTML = `
     <nav class="navbar">
         <div class="logo-container">
-            <h1>${logoText}</h1>
+        <img src="${imageSrc}" alt="${imageAlt}"/>
         </div>
         <div class="buttons-container">
             ${buttonsHTML}
