@@ -1,40 +1,38 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
-    const [imageSection, ...ctaSections] = block.children;
+    // Extract the logo and buttons container
+    const [logoContainerEl, buttonsContainerEl] = block.children;
 
-    // Get image source and alt text
-    const imageSrc = imageSection.querySelector('img')?.src;
-    const imageAlt = imageSection.querySelector('img')?.alt || 'navbar';
+    // Logo processing
+    const logoText = logoContainerEl?.querySelector('h1')?.textContent?.trim() || 'Logo';
 
-    // Generate cta elements
-    const ctaElements = ctaSections
-        .map((element)  => {
-            const [ ctaTextEl, linkEl] = element.children;
-            const ctaText = ctaTextEl?.textContent?.trim() || '';
-            const link = linkEl?.querySelector('.button-container a')?.href;
+    // Button processing
+    const buttonElements = buttonsContainerEl?.querySelectorAll('.nav-button') || [];
+    const buttonsHTML = Array.from(buttonElements).map((button) => {
+        const href = button?.href || '#';
+        const buttonText = button?.textContent?.trim() || '';
+        const isActive = button.classList.contains('active') ? 'active' : '';
 
-            element.innerHTML = ` 
-              
-                    <a href="${link}" class="button">  <p>${ctaText}</p></a>
-               
-            `;
-            return element.innerHTML;
-        })
-        
-        .join('');
+        return `
+        <a href="${href}" class="nav-button ${isActive}">
+            ${buttonText}
+        </a>
+        `;
+    }).join('');
 
-    // Construct the navbar HTML
+    // Construct the new HTML structure
     block.innerHTML = `
-        <nav class="navbar">
-            <div class="logo-container">
-                <img src="${imageSrc}" alt="${imageAlt}"/>
-            </div>
-            <div class="buttons-container">
-                <ul>
-                    ${ctaElements}
-                </ul>
-            </div>
-        </nav>
+    <nav class="navbar">
+        <div class="logo-container">
+            <h1>${logoText}</h1>
+        </div>
+        <div class="buttons-container">
+            ${buttonsHTML}
+        </div>
+    </nav>
     `;
+
+    // Optionally add moveInstrumentation if needed
+    moveInstrumentation(block, block.querySelector('.navbar'));
 }
