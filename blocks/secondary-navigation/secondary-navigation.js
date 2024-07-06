@@ -55,20 +55,5 @@ export default function decorate(block) {
     `;
     const navbarbuttons = block.querySelectorAll('.nav-button');
     setupNavButtons(navbarbuttons);
-    let lastScrollTop = 0;
-    const header = document.getElementById('header');
-
-    window.addEventListener('scroll', () => {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollTop > lastScrollTop) {
-            // Downscroll
-            header.classList.add('hidden');
-        } else {
-            // Upscroll
-            header.classList.remove('hidden');
-        }
-
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For mobile or negative scrolling
-    });
+    
 }

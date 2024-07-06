@@ -43,8 +43,9 @@ body {
     text-align: center;
     font-size: 14px;
     font-style: normal;
-    padding: 20px 20px ;
-    text-decoration: none;
+   padding: 20px 20px ;
+   text-decoration: none;
+    
     font-weight: 500;
     line-height: 20px;
     color: grey;
@@ -55,6 +56,26 @@ body {
     color: black;
     border-bottom: 2px solid black;
 }
+
+/* .navbar::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: grey;
+} */
+
+/* .nav-button.active::before {
+    content: '';
+    position: absolute;
+    bottom: -2px; 
+    left: 0;
+    width: 100%;
+    
+    background-color: black;
+} */
 
 @media (max-width: 540px) {
     .navbar {
@@ -86,8 +107,4 @@ body {
         font-weight: 500;
         line-height: 16px;
     }
-}
-
-.hidden {
-    display: none;
 }
