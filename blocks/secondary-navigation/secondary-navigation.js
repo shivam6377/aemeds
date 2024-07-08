@@ -38,23 +38,20 @@ export default function decorate(block) {
         });
     }
 
-    const pictureElement = document.createElement('picture');
-    const imgElement = document.createElement('img');
-    imgElement.src = imageSrc;
-    imgElement.alt = alt;
-    pictureElement.appendChild(imgElement);
-
     block.innerHTML = `
     <nav class="navbar">
-        <div class="logo-container"></div>
-        <div class="buttons-container">${ctaElements}</div>
-    </nav>
-    `;
-    
-    block.querySelector('.logo-container').appendChild(pictureElement);
-    
-    const navbarButtons = block.querySelectorAll('.nav-button');
-    setupNavButtons(navbarButtons);
+    <div class="logo-container">
+        <picture>
+            <img src="${imageSrc}" alt="${alt}">
+        </picture>
+    </div>
+    <div class="buttons-container">
+        ${ctaElements}
+    </div>
+</nav>
+`;
+    const navbarbuttons = block.querySelectorAll('.nav-button');
+    setupNavButtons(navbarbuttons);
 
     // Hide sub-navigation on scroll up
     let lastScrollTop = 0;
@@ -62,9 +59,11 @@ export default function decorate(block) {
         const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
         const navbar = document.querySelector('.navbar');
         if (currentScroll > lastScrollTop) {
-            navbar.style.top = '0';
+            
+            navbar.style.top = '0'; 
         } else {
-            navbar.style.top = '-100px';
+            
+            navbar.style.top = '-100px'; 
         }
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
