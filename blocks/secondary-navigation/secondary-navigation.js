@@ -40,15 +40,16 @@ export default function decorate(block) {
 
     block.innerHTML = `
     <nav class="navbar">
-        <div class="logo-container">
-    <picture> <img src="${imageSrc}" alt="${alt}"> </picture>
-             
-         </div>
-         <div class="buttons-container">
-             ${ctaElements}
-         </div>
-     </nav>
-     `;
+    <div class="logo-container">
+        <picture>
+            <img src="${imageSrc}" alt="${alt}">
+        </picture>
+    </div>
+    <div class="buttons-container">
+        ${ctaElements}
+    </div>
+</nav>
+`;
     const navbarbuttons = block.querySelectorAll('.nav-button');
     setupNavButtons(navbarbuttons);
 
