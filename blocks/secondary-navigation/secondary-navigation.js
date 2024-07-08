@@ -2,9 +2,9 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
     console.log(block);
-    const [logoImageEl, logoImageAltEl, ...ctasEl] = block.children;
-    const logoImage = logoImageEl?.querySelector('img')?.src;
-    const logoImageAlt = logoImageAltEl?.textContent?.trim() || 'navbar';
+    const [imageEl, imageAltTextEl, ...ctasEl] = block.children;
+    const imageSrc = imageEl?.querySelector('img')?.src;
+    const alt = imageAltTextEl?.querySelector('img')?.alt || 'navbar';
 
     const ctaElements = ctasEl.map((element, index) => {
         const [ctaTextEl, linkEl] = element.children;
@@ -42,7 +42,7 @@ export default function decorate(block) {
     <nav class="navbar">
     <div class="logo-container">
         <picture>
-            <img src="${logoImage}" alt="${logoImageAlt}">
+            <img src="${imageSrc}" alt="${alt}">
         </picture>
     </div>
     <div class="buttons-container">
