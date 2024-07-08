@@ -27,6 +27,10 @@
     flex: 0 0 auto;
 }
 
+.navbar .logo-container picture img {
+    width: 100px; /* Set the width of the image */
+    height: auto; /* Maintain aspect ratio */
+}
 
 .navbar .buttons-container {
     display: flex;
