@@ -5,10 +5,10 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Fira Sans";
 }
 
-.navbar {
+/* .navbar {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -19,37 +19,81 @@ body {
     padding-left: 1rem;
     width: 100%;
     min-width: 560px;
-    position: relative; /* Added for positioning the underline */
+    position: relative;  */
+/* Added for positioning the underline */
+/* } */
+
+/* .navbar {
+    
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+   
+    min-width: 560px;
+    position: relative;  */
+/* Added for positioning the underline */
+/* } */
+
+.navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    background-color: #F2F2F2;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    width: 100%;
+    padding-top: 48px;
+    border-bottom: 1px solid #C9D3D7;
 }
+
+/* .navbar::after{
+    content: '';
+    border-bottom: 1px solid #C9D3D7;
+    height: 100px;
+} */
+
 
 .logo-container {
-    /* Ensure logo doesn't affect navbar height */
-    flex: 0 0 auto; /* Prevent from growing or shrinking */
-}
-
-.logo-container img {
-    height: 50px;
-    width: 100px;
+    color: var(--Primary-Main, #18171A);
+    font-family: "Fira Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 1.28px;
+    padding-bottom: 8px;
+    flex: 0 0 auto;
 }
 
 .buttons-container {
-    display: flex;
-    gap: 40px;
+    /* display: flex;
+    gap: 24px;
     justify-content: space-between;
-    position: relative; /* Added for positioning the underline */
+    position: relative; */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    /* justify-content: space-between; */
+    gap: 24px;
+    white-space: nowrap;
+    padding-right: 20px;
+    overflow-x: auto;
 }
 
 .nav-button {
+    font-family: "Fira Sans";
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     font-style: normal;
-   padding: 20px 20px ;
-   text-decoration: none;
-    
-    font-weight: 500;
-    line-height: 20px;
-    color: grey;
-    position: relative; /* Added for positioning the underline */
+    padding: 12px 0;
+    text-decoration: none;
+    font-weight: 400;
+    line-height: 16px;
+    color: var(--Tertiary-Deep-Grey, #767879);
+    position: relative;
+    text-decoration: none;
 }
 
 .nav-button.active {
@@ -77,34 +121,65 @@ body {
     background-color: black;
 } */
 
-@media (max-width: 540px) {
+@media (min-width: 999px) {
     .navbar {
+        display: inline-flex;
+        flex-direction: row;
+        /* align-items: center; */
+        align-items: stretch;
+        justify-content: space-between;
+        padding: 0 64px;
+        gap: 0;
+    }
+
+    .logo-container {
+        padding: 0;
+        display: flex;
         flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        min-width: 320px;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 32px;
+        padding: 24px 0;
+
     }
 
     .buttons-container {
+        gap: 40px;
+        position: relative;
+        justify-content: flex-end;
+        overflow-x: none;
+        padding: 0;
+        -ms-overflow-style: none; 
+        scrollbar-width: none; 
+        overflow-x: hidden;
+    }
+
+
+
+    /* .buttons-container {
         flex-direction: row;
         overflow-x: auto;
         white-space: nowrap;
         gap: 24px;
         width: 100%;
-        -ms-overflow-style: none; /* Internet Explorer 10+ */
-        scrollbar-width: none; /* Firefox */
-    }
+        -ms-overflow-style: none; 
+        scrollbar-width: none; 
+    } */
 
-    .buttons-container::-webkit-scrollbar {
-        display: none; /* Safari and Chrome */
-    }
+    /* .buttons-container::-webkit-scrollbar {
+        display: none; 
+    } */
 
     .nav-button {
         display: inline-block;
         text-align: center;
-        font-size: 12px;
+        color: var(--Tertiary-Deep-Grey, #767879);
+        font-family: "Fira Sans";
+        font-size: 14px;
         font-style: normal;
-        font-weight: 500;
-        line-height: 16px;
+        font-weight: 400;
+        line-height: 20px;
+        padding: 29px 0;
     }
 }

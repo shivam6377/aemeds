@@ -10,23 +10,23 @@ export default function decorate(block) {
         const ctaText = ctaTextEl?.textContent?.trim() || '';
         const link = linkEl?.querySelector('.button-container a')?.href;
 
-        // Create new button element
+        
         const newButton = document.createElement('a');
         newButton.href = link;
         newButton.innerHTML = `<p>${ctaText}</p>`;
 
-        // Add classes based on index (assuming first button should be active)
+        
         if (index === 0) {
             newButton.classList.add('nav-button', 'active');
         } else {
             newButton.classList.add('nav-button');
         }
 
-        // Clear existing content and add newButton
+        
         element.innerHTML = '';
         element.appendChild(newButton);
 
-        // Move instrumentation
+    
         moveInstrumentation(element, newButton);
 
         return element.innerHTML;
@@ -34,10 +34,10 @@ export default function decorate(block) {
     function setupNavButtons(navButtons) {
         navButtons.forEach(button => {
             button.addEventListener('click', function() {
-                // Remove active class from all buttons
+                
                 navButtons.forEach(btn => btn.classList.remove('active'));
     
-                // Add active class to the clicked button
+                
                 button.classList.add('active');
             });
         });
