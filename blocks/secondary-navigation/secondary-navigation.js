@@ -1,9 +1,8 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
-    const [imageEl, imageAltTextEl,imageClickedEl, ...ctasEl] = block.children;
+    const [imageEl, imageAltTextEl, ...ctasEl] = block.children;
     const imageSrc = imageEl?.querySelector('img')?.src;
-    const imageClickedSrc = imageClickedEl?.querySelector('img')?.src;
     const alt = imageAltTextEl?.querySelector('img')?.alt || 'navbar';
 
     const ctaElements = ctasEl.map((element, index) => {
