@@ -1,10 +1,16 @@
-import { moveInstrumentation } from '../../scripts/scripts.js';
-
 export default function decorate(block) {
     console.log(block);
-    const [imageEl, imageAltTextEl, ...ctasEl] = block.children;
-    const imageSrc = imageEl?.querySelector('img')?.src;
-    const alt = imageAltTextEl?.querySelector('img')?.alt || 'navbar';
+    const [imageEl, altTextEl, ...ctasEl] = block.children;
+
+    // Ensure you have the correct selectors for your structure
+    const picture = imageEl?.querySelector('picture');
+    if (picture) {
+        const img = picture.querySelector('img');
+        img.removeAttribute('width');
+        img.removeAttribute('height');
+        const alt = altTextEl?.textContent?.trim() || 'image';
+        img.setAttribute('alt', alt);
+    }
 
     const ctaElements = ctasEl.map((element, index) => {
         const [ctaTextEl, linkEl] = element.children;
@@ -29,27 +35,17 @@ export default function decorate(block) {
         return element.innerHTML;
     }).join('');
 
-    function setupNavButtons(navButtons) {
-        navButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                navButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-            });
-        });
-    }
-
     block.innerHTML = `
     <nav class="navbar">
-    <div class="logo-container">
-        <picture>
-            <img src="${imageSrc}" alt="${alt}">
-        </picture>
-    </div>
-    <div class="buttons-container">
-        ${ctaElements}
-    </div>
-</nav>
-`;
+        <div class="logo-container">
+            ${imageEl.innerHTML} <!-- Keep the original content of 'imageEl' -->
+        </div>
+        <div class="buttons-container">
+            ${ctaElements}
+        </div>
+    </nav>
+    `;
+
     const navbarbuttons = block.querySelectorAll('.nav-button');
     setupNavButtons(navbarbuttons);
 
@@ -59,11 +55,9 @@ export default function decorate(block) {
         const currentScroll = window.pageYOffset || block.documentElement.scrollTop;
         const navbar = block.querySelector('.navbar');
         if (currentScroll > lastScrollTop) {
-            
-            navbar.style.top = '0'; 
+            navbar.style.top = '0px'; 
         } else {
-            
-            navbar.style.top = '-100px'; 
+            navbar.style.top = '-210px'; 
         }
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     });
