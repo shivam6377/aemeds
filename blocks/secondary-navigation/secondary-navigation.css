@@ -9,10 +9,7 @@
     width: 100%;
     padding-top: 48px;
     border-bottom: 1px solid #C9D3D7;
-    position: fixed; /* Ensure the navbar is fixed at the top */
-    top: 0; /* Initial position at the top */
-    left: 0; /* Full width */
-    transition: top 0.3s; /* Smooth transition for hiding/showing */
+   
 }
 
 .navbar .logo-container {
@@ -118,8 +115,5 @@
         padding: 29px 0;
     }
 
-    /* Hide scrollbar for IE, Edge, and Firefox */
-    .navbar .buttons-container::-webkit-scrollbar {
-        display: none;
-    }
+
 }
