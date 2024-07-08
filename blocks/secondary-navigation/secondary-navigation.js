@@ -2,9 +2,9 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
     console.log(block);
-    const [imageEl, imageAltTextEl, ...ctasEl] = block.children;
-    const imageSrc = imageEl?.querySelector('img')?.src;
-    const alt = imageAltTextEl?.querySelector('img')?.alt || 'navbar';
+    const [logoImageEl, logoImageAltEl, ...ctasEl] = block.children;
+    const logoImage = logoImageEl?.querySelector('img')?.src;
+    const logoImageAlt = logoImageAltEl?.textContent?.trim() || 'navbar';
 
     const ctaElements = ctasEl.map((element, index) => {
         const [ctaTextEl, linkEl] = element.children;
@@ -42,7 +42,7 @@ export default function decorate(block) {
     <nav class="navbar">
     <div class="logo-container">
         <picture>
-            <img src="${imageSrc}" alt="${alt}">
+            <img src="${logoImage}" alt="${logoImageAlt}">
         </picture>
     </div>
     <div class="buttons-container">
@@ -56,8 +56,8 @@ export default function decorate(block) {
     // Hide sub-navigation on scroll up
     let lastScrollTop = 0;
     window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-        const navbar = document.querySelector('.navbar');
+        const currentScroll = window.pageYOffset || block.documentElement.scrollTop;
+        const navbar = block.querySelector('.navbar');
         if (currentScroll > lastScrollTop) {
             
             navbar.style.top = '0'; 
