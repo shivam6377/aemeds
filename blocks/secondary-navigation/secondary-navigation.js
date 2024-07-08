@@ -1,3 +1,4 @@
+import { moveInstrumentation } from '../../scripts/scripts.js';
 export default function decorate(block) {
     console.log(block);
     const [imageEl, altTextEl, ...ctasEl] = block.children;
