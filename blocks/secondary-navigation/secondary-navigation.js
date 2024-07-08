@@ -39,7 +39,7 @@ export default function decorate(block) {
     block.innerHTML = `
     <nav class="navbar">
         <div class="logo-container">
-            ${imageEl.innerHTML} <!-- Keep the original content of 'imageEl' -->
+            ${imageEl.innerHTML} 
         </div>
         <div class="buttons-container">
             ${ctaElements}
@@ -49,17 +49,34 @@ export default function decorate(block) {
 
     const navbarbuttons = block.querySelectorAll('.nav-button');
     setupNavButtons(navbarbuttons);
-
-    // Hide sub-navigation on scroll up
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', function() {
-        const currentScroll = window.pageYOffset || block.documentElement.scrollTop;
-        const navbar = block.querySelector('.navbar');
-        if (currentScroll > lastScrollTop) {
-            navbar.style.top = '0px'; 
-        } else {
-            navbar.style.top = '-210px'; 
-        }
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    block.addEventListener("DOMContentLoaded", function() {
+        const subHeader = block.querySelector(".navbar");
+        const component2 = block.querySelector(".secondary-navigation block");
+ 
+        const subHeaderOriginalTop = subHeader.offsetTop;
+        let lastScrollTop = 0;
+    
+        window.addEventListener("scroll", function() {
+            const scrollTop = window.pageYOffset || block.documentElement.scrollTop;
+            const component2Top = component2.offsetTop;
+            const component2Bottom = component2Top + component2.offsetHeight;
+    
+            if (scrollTop > lastScrollTop) {
+                // Scrolling down
+                if (scrollTop >= component2Top) {
+                    subHeader.classList.remove("sticky");
+                }
+            } else {
+                // Scrolling up
+                if (scrollTop >= component2Top && scrollTop < component2Bottom) {
+                    subHeader.classList.add("sticky");
+                } else {
+                    subHeader.classList.remove("sticky");
+                }
+            }
+    
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
     });
+   
 }
