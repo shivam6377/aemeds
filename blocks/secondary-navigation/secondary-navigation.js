@@ -1,6 +1,7 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
+    console.log(block);
     const [imageEl, imageAltTextEl, ...ctasEl] = block.children;
     const imageSrc = imageEl?.querySelector('img')?.src;
     const alt = imageAltTextEl?.querySelector('img')?.alt || 'navbar';
@@ -40,13 +41,14 @@ export default function decorate(block) {
     block.innerHTML = `
     <nav class="navbar">
         <div class="logo-container">
-            <img src="${imageSrc}" alt="${alt}">
-        </div>
-        <div class="buttons-container">
-            ${ctaElements}
-        </div>
-    </nav>
-    `;
+    <picture> <img src="${imageSrc}" alt="${alt}"> </picture>
+             
+         </div>
+         <div class="buttons-container">
+             ${ctaElements}
+         </div>
+     </nav>
+     `;
     const navbarbuttons = block.querySelectorAll('.nav-button');
     setupNavButtons(navbarbuttons);
 
