@@ -2,7 +2,7 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
     const [imageEl, imageAltTextEl, ...ctasEl] = block.children;
-    const logoImage = imageEl?.querySelector('img')?.src;
+    const imageSrc = imageEl?.querySelector('img')?.src;
     const alt = imageAltTextEl?.querySelector('img')?.alt || 'navbar';
 
     const ctaElements = ctasEl.map((element, index) => {
@@ -40,7 +40,7 @@ export default function decorate(block) {
     block.innerHTML = `
     <nav class="navbar">
         <div class="logo-container">
-            <img src="${logoImage}" alt="${alt}">
+            <img src="${imageSrc}" alt="${alt}">
         </div>
         <div class="buttons-container">
             ${ctaElements}
