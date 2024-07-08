@@ -27,10 +27,7 @@
     flex: 0 0 auto;
 }
 
-.navbar.logo-container img {
-    height: 50px;
-    width: 100px;
-}
+
 .navbar .buttons-container {
     display: flex;
     flex-direction: row;
