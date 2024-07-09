@@ -1,11 +1,9 @@
-
 import { moveInstrumentation } from '../../scripts/scripts.js';
 export default function decorate(block) {
-
-    const [logoEl, ...ctasEl] = block.children;
+    const [logoEl,linkEl, ...ctasEl] = block.children;
     const logoText = logoEl?.textContent?.trim() || '';
+    const link = linkEl?.querySelector('.logo-container a')?.href;
     
-
     const ctaElements = ctasEl.map((element, index) => {
         const [ctaTextEl, linkEl] = element.children;
         const ctaText = ctaTextEl?.textContent?.trim() || '';
@@ -41,7 +39,7 @@ export default function decorate(block) {
     block.innerHTML = `
     <nav class="navbar">
         <div class="logo-container">
-          <p>  ${logoText} </p>
+          <p>${logoText}</p>
         </div>
         <div class="buttons-container">
             ${ctaElements}
@@ -53,7 +51,6 @@ export default function decorate(block) {
     setupNavButtons(navbarbuttons);
 
     const navbar = block.querySelector('.navbar');
-    const navbarOriginalTop = navbar.offsetTop;
     let lastScrollTop = 0;
 
     window.addEventListener("scroll", function() {
@@ -61,18 +58,14 @@ export default function decorate(block) {
 
         if (scrollTop > lastScrollTop) {
             // Scrolling down
-            if (scrollTop > navbarOriginalTop) {
-                navbar.classList.add("sticky");
-            } else {
-                navbar.classList.remove("sticky");
-            }
-        } else {
+            navbar.classList.add("sticky");
+            navbar.classList.remove("hidden");
+        } else if (scrollTop < lastScrollTop) {
             // Scrolling up
-            if (scrollTop > navbarOriginalTop) {
-                navbar.classList.remove("sticky");
-            }
+            navbar.classList.remove("sticky");
+            navbar.classList.add("hidden");
         }
 
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        lastScrollTop = scrollTop;
     });
 }
