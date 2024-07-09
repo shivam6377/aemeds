@@ -2188,6 +2188,12 @@
         "name": "logo",
         "label": "Logo",
         "value": ""
+      },
+      {
+        "component": "aem-content",
+        "valueType": "string",
+        "name": "logoLink",
+        "label": "Link"
       }
      
     ]
