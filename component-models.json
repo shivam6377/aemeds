@@ -2186,7 +2186,7 @@
         "component": "text",
         "valueType": "string",
         "name": "logo",
-        "label": "Logo",
+        "label": "Logo Text",
         "value": ""
       },
       {
