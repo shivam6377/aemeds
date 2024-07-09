@@ -4,6 +4,7 @@ export default function decorate(block) {
 
     const [logoEl, ...ctasEl] = block.children;
     const logoText = logoEl?.textContent?.trim() || '';
+    
 
     const ctaElements = ctasEl.map((element, index) => {
         const [ctaTextEl, linkEl] = element.children;
