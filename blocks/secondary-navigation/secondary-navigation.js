@@ -1,9 +1,9 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
-    const [logoEl, linkEl, ...ctasEl] = block.children;
+    const [logoEl, logolinkEl, ...ctasEl] = block.children;
     const logoText = logoEl?.textContent?.trim() || '';
-    const logoLink = linkEl?.querySelector('a')?.href || '';
+    const logoLink = logolinkEl?.querySelector('a')?.href || '';
 
     const ctaElements = ctasEl.map((element, index) => {
         const [ctaTextEl, linkEl] = element.children;
