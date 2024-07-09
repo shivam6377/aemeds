@@ -40,7 +40,7 @@ export default function decorate(block) {
     block.innerHTML = `
     <nav class="navbar">
         <div class="logo-container">
-            ${logoText} 
+          <p>  ${logoText} </p>
         </div>
         <div class="buttons-container">
             ${ctaElements}
