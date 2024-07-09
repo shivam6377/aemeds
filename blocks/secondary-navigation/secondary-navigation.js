@@ -5,7 +5,8 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
 
-    const [imageEl, altTextEl, ...ctasEl] = block.children;
+    const [logoEl, ...ctasEl] = block.children;
+    const logoText = logoEl?.textContent?.trim() || '';
 
     // // Ensure you have the correct selectors for your structure
     // const picture = imageEl?.querySelector('picture');
@@ -49,16 +50,16 @@ export default function decorate(block) {
         });
     }
 
-    // block.innerHTML = `
-    // <nav class="navbar">
-    //     <div class="logo-container">
-    //         ${imageEl.innerHTML} 
-    //     </div>
-    //     <div class="buttons-container">
-    //         ${ctaElements}
-    //     </div>
-    // </nav>
-    // `;
+    block.innerHTML = `
+    <nav class="navbar">
+        <div class="logo-container">
+            ${logoText} 
+        </div>
+        <div class="buttons-container">
+            ${ctaElements}
+        </div>
+    </nav>
+    `;
 
     const navbarbuttons = block.querySelectorAll('.nav-button');
     setupNavButtons(navbarbuttons);
