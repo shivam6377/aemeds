@@ -1,9 +1,10 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
+
 export default function decorate(block) {
-    const [logoEl,linkEl, ...ctasEl] = block.children;
+    const [logoEl, linkEl, ...ctasEl] = block.children;
     const logoText = logoEl?.textContent?.trim() || '';
-    const link = linkEl?.querySelector('.logo-container a')?.href;
-    
+    const logoLink = linkEl?.querySelector('a')?.href || '';
+
     const ctaElements = ctasEl.map((element, index) => {
         const [ctaTextEl, linkEl] = element.children;
         const ctaText = ctaTextEl?.textContent?.trim() || '';
@@ -36,11 +37,13 @@ export default function decorate(block) {
         });
     }
 
+  
+
     block.innerHTML = `
     <nav class="navbar">
-        <div class="logo-container">
-          <p>${logoText}</p>
-        </div>
+    <a href="${logoLink}" class="logo-container">
+    <p>${logoText}</p>
+</a>
         <div class="buttons-container">
             ${ctaElements}
         </div>

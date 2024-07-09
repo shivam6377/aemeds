@@ -21,6 +21,7 @@
     letter-spacing: 1.28px;
     padding-bottom: 8px;
     flex: 0 0 auto;
+    text-decoration: none;
 }
 
 .navbar .buttons-container {
