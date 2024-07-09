@@ -7,15 +7,15 @@ export default function decorate(block) {
 
     const [imageEl, altTextEl, ...ctasEl] = block.children;
 
-    // Ensure you have the correct selectors for your structure
-    const picture = imageEl?.querySelector('picture');
-    if (picture) {
-        const img = picture.querySelector('img');
-        img.removeAttribute('width');
-        img.removeAttribute('height');
-        const alt = altTextEl?.textContent?.trim() || 'image';
-        img.setAttribute('alt', alt);
-    }
+    // // Ensure you have the correct selectors for your structure
+    // const picture = imageEl?.querySelector('picture');
+    // if (picture) {
+    //     const img = picture.querySelector('img');
+    //     img.removeAttribute('width');
+    //     img.removeAttribute('height');
+    //     const alt = altTextEl?.textContent?.trim() || 'image';
+    //     img.setAttribute('alt', alt);
+    // }
 
     const ctaElements = ctasEl.map((element, index) => {
         const [ctaTextEl, linkEl] = element.children;
@@ -49,16 +49,16 @@ export default function decorate(block) {
         });
     }
 
-    block.innerHTML = `
-    <nav class="navbar">
-        <div class="logo-container">
-            ${imageEl.innerHTML} 
-        </div>
-        <div class="buttons-container">
-            ${ctaElements}
-        </div>
-    </nav>
-    `;
+    // block.innerHTML = `
+    // <nav class="navbar">
+    //     <div class="logo-container">
+    //         ${imageEl.innerHTML} 
+    //     </div>
+    //     <div class="buttons-container">
+    //         ${ctaElements}
+    //     </div>
+    // </nav>
+    // `;
 
     const navbarbuttons = block.querySelectorAll('.nav-button');
     setupNavButtons(navbarbuttons);
