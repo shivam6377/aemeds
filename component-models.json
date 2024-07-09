@@ -2183,19 +2183,13 @@
     "id": "secondary-navigation",
     "fields": [
       {
-        "component": "reference",
+        "component": "text",
         "valueType": "string",
-        "name": "logoImage",
-        "label": "Logo Image",
-        "multi": false
-      },
-      {
-        "component": "text-input",
-        "name": "logoImageAlt",
-        "value": "",
-        "label": "Alt Text",
-        "valueType": "string"
+        "name": "logo",
+        "label": "Logo",
+        "value": ""
       }
+     
     ]
   }
 ]

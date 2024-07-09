@@ -9,7 +9,6 @@
     width: 100%;
     padding-top: 48px;
     border-bottom: 1px solid #C9D3D7;
-   
 }
 
 .navbar .logo-container {
@@ -65,8 +64,7 @@
     z-index: 1000;
     background-color: #f0f0f0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
+} 
 
 @media (min-width: 999px) {
     .navbar {
@@ -114,6 +112,4 @@
         line-height: 20px;
         padding: 29px 0;
     }
-
-
 }
