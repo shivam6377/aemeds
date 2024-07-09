@@ -1,5 +1,20 @@
 import { moveInstrumentation } from '../../scripts/scripts.js';
 
+function handleScrollBehavior(navbar) {
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        if (currentScroll > lastScrollTop) {
+            // Scroll down
+            navbar.style.top = '0'; // Adjust this value based on your navbar height
+        } else {
+            // Scroll up
+            navbar.style.top = '-200px'; // Adjust this value based on your navbar height
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
+}
+
 export default function decorate(block) {
     const [logoEl, logolinkEl, ...ctasEl] = block.children;
     const logoText = logoEl?.textContent?.trim() || '';
@@ -37,13 +52,11 @@ export default function decorate(block) {
         });
     }
 
-  
-
     block.innerHTML = `
     <nav class="navbar">
-    <a href="${logoLink}" class="logo-container">
-    <p>${logoText}</p>
-</a>
+        <a href="${logoLink}" class="logo-container">
+            <p>${logoText}</p>
+        </a>
         <div class="buttons-container">
             ${ctaElements}
         </div>
@@ -54,21 +67,14 @@ export default function decorate(block) {
     setupNavButtons(navbarbuttons);
 
     const navbar = block.querySelector('.navbar');
-    let lastScrollTop = 0;
+    handleScrollBehavior(navbar);
 
-    window.addEventListener("scroll", function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollTop > lastScrollTop) {
-            // Scrolling down
-            navbar.classList.add("sticky");
-            navbar.classList.remove("hidden");
-        } else if (scrollTop < lastScrollTop) {
-            // Scrolling up
-            navbar.classList.remove("sticky");
-            navbar.classList.add("hidden");
+    // Apply scroll functionality to media elements
+    const mediaElements = document.querySelectorAll('.media-element');
+    mediaElements.forEach(mediaElement => {
+        const mediaNavbar = mediaElement.querySelector('.navbar');
+        if (mediaNavbar) {
+            handleScrollBehavior(mediaNavbar);
         }
-
-        lastScrollTop = scrollTop;
     });
 }

@@ -4,18 +4,20 @@
     align-items: flex-start;
     gap: 12px;
     background-color: #F2F2F2;
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding: 48px 1rem 0 1rem; /* Combined padding */
     width: 100%;
-    padding-top: 48px;
     border-bottom: 1px solid #C9D3D7;
+    position: fixed; /* Ensure the navbar is fixed at the top */
+    top: 0; /* Initial position at the top */
+    left: 0; /* Full width */
+    transition: top 0.3s; /* Smooth transition for hiding/showing */
+    z-index: 1000; /* Ensure the navbar stays on top */
 }
 
 .navbar .logo-container {
     color: var(--Primary-Main, #18171A);
     font-family: "Fira Sans";
     font-size: 16px;
-    font-style: normal;
     font-weight: 700;
     line-height: 24px;
     letter-spacing: 1.28px;
@@ -33,13 +35,18 @@
     white-space: nowrap;
     padding-right: 20px;
     overflow-x: auto;
+    -ms-overflow-style: none;  /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none;  /* Hide scrollbar in Firefox */
+}
+
+.navbar .buttons-container::-webkit-scrollbar {
+    display: none; /* Hide scrollbar in Chrome, Safari, and Opera */
 }
 
 .navbar .buttons-container .nav-button {
     font-family: "Fira Sans";
     text-align: center;
     font-size: 12px;
-    font-style: normal;
     padding: 12px 0;
     text-decoration: none;
     font-weight: 400;
@@ -53,34 +60,17 @@
     border-bottom: 2px solid black;
 }
 
-.sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: #f0f0f0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-} 
-
-.hidden {
-    display: none;
-}
-
 @media (min-width: 999px) {
     .navbar {
-        display: inline-flex;
+        display: flex;
         flex-direction: row;
-        align-items: stretch;
+        align-items: center;
         justify-content: space-between;
         padding: 0 64px;
         gap: 0;
-        top: 0; /* Ensure navbar is fixed at the top */
-        left: 0; /* Full width */
-        transition: top 0.3s; /* Smooth transition for hiding/showing */
     }
 
     .navbar .logo-container {
-        padding: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -92,23 +82,13 @@
 
     .navbar .buttons-container {
         gap: 40px;
-        position: relative;
         justify-content: flex-end;
-        overflow-x: none;
+        overflow-x: hidden; /* Prevent horizontal scroll */
         padding: 0;
-        -ms-overflow-style: none; 
-        scrollbar-width: none; 
-        overflow-x: hidden;
     }
 
     .navbar .buttons-container .nav-button {
-        display: inline-block;
-        text-align: center;
-        color: var(--Tertiary-Deep-Grey, #767879);
-        font-family: "Fira Sans";
         font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
         line-height: 20px;
         padding: 29px 0;
     }
