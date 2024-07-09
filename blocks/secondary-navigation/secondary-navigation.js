@@ -1,22 +1,9 @@
 
-
-
 import { moveInstrumentation } from '../../scripts/scripts.js';
-
 export default function decorate(block) {
 
     const [logoEl, ...ctasEl] = block.children;
     const logoText = logoEl?.textContent?.trim() || '';
-
-    // // Ensure you have the correct selectors for your structure
-    // const picture = imageEl?.querySelector('picture');
-    // if (picture) {
-    //     const img = picture.querySelector('img');
-    //     img.removeAttribute('width');
-    //     img.removeAttribute('height');
-    //     const alt = altTextEl?.textContent?.trim() || 'image';
-    //     img.setAttribute('alt', alt);
-    // }
 
     const ctaElements = ctasEl.map((element, index) => {
         const [ctaTextEl, linkEl] = element.children;
