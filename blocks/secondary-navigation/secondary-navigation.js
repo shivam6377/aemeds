@@ -1,4 +1,7 @@
+
+
 import { moveInstrumentation } from '../../scripts/scripts.js';
+
 
 export default function decorate(block) {
     const [logoEl, logolinkEl, ...ctasEl] = block.children;
@@ -37,13 +40,11 @@ export default function decorate(block) {
         });
     }
 
-  
-
     block.innerHTML = `
     <nav class="navbar">
-    <a href="${logoLink}" class="logo-container">
-    <p>${logoText}</p>
-</a>
+        <a href="${logoLink}" class="logo-container">
+            <p>${logoText}</p>
+        </a>
         <div class="buttons-container">
             ${ctaElements}
         </div>
@@ -53,22 +54,17 @@ export default function decorate(block) {
     const navbarbuttons = block.querySelectorAll('.nav-button');
     setupNavButtons(navbarbuttons);
 
-    const navbar = block.querySelector('.navbar');
-    let lastScrollTop = 0;
-
-    window.addEventListener("scroll", function() {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollTop > lastScrollTop) {
-            // Scrolling down
-            navbar.classList.add("sticky");
-            navbar.classList.remove("hidden");
-        } else if (scrollTop < lastScrollTop) {
-            // Scrolling up
-            navbar.classList.remove("sticky");
-            navbar.classList.add("hidden");
-        }
-
-        lastScrollTop = scrollTop;
-    });
+    // let lastScrollTop = 0;
+    // window.addEventListener('scroll', function() {
+    //     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    //     const navbar = block.querySelector('.navbar');
+    //     if (currentScroll > lastScrollTop) {
+    //         // Scroll down
+    //         navbar.style.top = '0'; // Adjust this value based on your navbar height
+    //     } else {
+    //         // Scroll up
+    //         navbar.style.top = '-200px'; // Adjust this value based on your navbar height
+    //     }
+    //     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    // });
 }
