@@ -54,17 +54,17 @@ export default function decorate(block) {
     const navbarbuttons = block.querySelectorAll('.nav-button');
     setupNavButtons(navbarbuttons);
 
-    // let lastScrollTop = 0;
-    // window.addEventListener('scroll', function() {
-    //     const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    //     const navbar = block.querySelector('.navbar');
-    //     if (currentScroll > lastScrollTop) {
-    //         // Scroll down
-    //         navbar.style.top = '0'; // Adjust this value based on your navbar height
-    //     } else {
-    //         // Scroll up
-    //         navbar.style.top = '-200px'; // Adjust this value based on your navbar height
-    //     }
-    //     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    // });
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+        const navbar = block.querySelector('.navbar');
+        if (currentScroll > lastScrollTop) {
+            // Scroll down
+            navbar.style.top = '0'; // Adjust this value based on your navbar height
+        } else {
+            // Scroll up
+            navbar.style.top = '-200px'; // Adjust this value based on your navbar height
+        }
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
 }

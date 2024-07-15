@@ -68,7 +68,8 @@
       "finance-options",
       "arena-help-me-select",
       "intro-to-design-car-detail",
-      "secondary-navigation"
+      "secondary-navigation",
+      "dealer-cards"
     ]
   },
   {
@@ -198,6 +199,12 @@
     "components": [
       "cta"
       
+    ]
+  },
+  {
+    "id": "dealer-cards",
+    "components": [
+      "teaser"
     ]
   }
 ]
