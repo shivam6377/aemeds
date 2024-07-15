@@ -869,7 +869,7 @@
         },
         {
           "title": "Dealer-Callback",
-          "id": "dealer-cards",
+          "id": "dealer-callback",
           "plugins": {
             "xwalk": {
               "page": {
