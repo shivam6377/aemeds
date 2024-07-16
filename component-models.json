@@ -423,10 +423,6 @@
           {
             "name": "Text Only Teaser",
             "value": "text-only-teaser"
-          },
-          {
-            "name": "Dealer Card",
-            "value": "dealer-card-teaser"
           }
         ]
       }
