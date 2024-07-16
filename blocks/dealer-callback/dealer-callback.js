@@ -1,12 +1,13 @@
 import utility from '../../utility/utility.js';
 import teaser from '../../utility/teaserUtils.js';
+import { moveInstrumentation } from '../../scripts/scripts.js';
 
 export default function decorate(block) {
   const [...teaserListEl] = block.children;
 
   const teasers = teaserListEl.map((card) => {
     const teaserObj = teaser.getTeaser(card)?.firstElementChild;
-    // moveInstrumentation(card, teaserObj); // Removed the moveInstrumentation functionality
+    moveInstrumentation(card, teaserObj);
     utility.mobileLazyLoading(teaserObj, '.teaser__image img');
     return teaserObj.outerHTML;
   });
