@@ -1,6 +1,7 @@
 .dealer-callback-container {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    position: relative;
+    clip-path: polygon(0 35px, 76% 31px, calc(76% + 25px) 0, 100% 0, 100% 100%, 0 100%);
+  background: black;
   }
   .dealer-callback-container .teaser__cards {
     display: flex;
@@ -13,42 +14,7 @@
     flex-grow: 1;
     height: 160px;
   }
-  .dealer-callback-container .teaser__card:nth-child(1)::before {
-    content: "";
-    background-color: #2648f4;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 56 56" fill="none"><rect width="56" height="56" fill="%23171D9B"/><rect y="32" width="24" height="24" fill="%232F37D4"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    backdrop-filter: blur(5px);
-    position: absolute;
-    transition: all 0.3s linear;
-    inset: 0;
-    z-index: 2;
-  }
-  .dealer-callback-container .teaser__card:nth-child(2)::before {
-    content: "";
-    background-color: #1c2e88;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="24" y="24" width="24" height="24" fill="%232F37D4"/><rect width="24" height="24" fill="%232A30B2"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    backdrop-filter: blur(5px);
-    position: absolute;
-    transition: all 0.3s linear;
-    inset: 0;
-    z-index: 2;
-  }
-  .dealer-callback-container .teaser__card:nth-child(3)::before {
-    content: "";
-    background: #171d9b;
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="53" height="51" viewBox="0 0 53 51" fill="none"><rect x="53" y="51" width="29.9625" height="51" transform="rotate(180 53 51)" fill="%232F37D4"/><rect x="53" y="51" width="29.9625" height="51" transform="rotate(180 53 51)" fill="%232F37D4"/><rect x="23.0371" y="19.7625" width="22.95" height="19.7625" transform="rotate(180 23.0371 19.7625)" fill="%23494FDC"/></svg>');
-    background-repeat: no-repeat;
-    background-position: right bottom;
-    backdrop-filter: blur(5px);
-    position: absolute;
-    transition: all 0.3s linear;
-    inset: 0;
-    z-index: 2;
-  }
+  
   .dealer-callback-container .teaser__image {
     width: 100%;
     position: absolute;
@@ -84,10 +50,7 @@
   .dealer-callback-container .teaser__actions {
     height: 100%;
   }
-  .dealer-callback-container .button.primary__btn {
-    background-color: rgba(255, 255, 255, 0.2);
-    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none"><rect width="48" height="48" fill="black" fill-opacity="0.05"/><path d="M11.1075 39L9 36.8925L31.8925 14H18V11H37V30H34V16.1075L11.1075 39Z" fill="white"/></svg>');
-  }
+
   @media (min-width: 999px) {
     .dealer-callback-container {
       padding-top: 60px;
@@ -101,7 +64,7 @@
       height: 240px;
     }
     .dealer-callback-container .button.primary__btn {
-      background-color: var(--primary-blue-700);
+      /* background-color: var(--primary-white); */
       opacity: 0;
       transition: all 0.3s linear;
     }
@@ -109,27 +72,13 @@
       background-position: right top;
       background-size: 80px 80px;
     }
-    .dealer-callback-container .teaser__card:nth-child(1):hover::before {
-      background-color: rgba(38, 72, 244, 0.8);
-      background-image: none;
-    }
     .dealer-callback-container .teaser__card:nth-child(2)::before {
       background-position: right top;
       background-size: 80px 80px;
-    }
-    .dealer-callback-container .teaser__card:nth-child(2):hover::before {
-      background-color: rgba(33, 43, 95, 0.8);
-      background-image: none;
     }
     .dealer-callback-container .teaser__card:nth-child(3)::before {
       background-position: left top;
       background-size: 80px 80px;
     }
-    .dealer-callback-container .teaser__card:nth-child(3):hover::before {
-      background-color: rgba(23, 29, 155, 0.8);
-      background-image: none;
-    }
-    .dealer-callback-container .teaser__card:hover .button.primary__btn {
-      opacity: 1;
-    }
   }
+  
