@@ -1,12 +1,9 @@
 export default function decorate(block) {
-    const [quoteWrapper, quoteWrapper2] = block.children;
-  
-    const blockquote = document.createElement('blockquote');
-    blockquote.textContent = quoteWrapper.textContent.trim();
-    quoteWrapper.replaceChildren(blockquote);
+  // const [quoteWrapper] = block.children;
 
-    const blockquote2 = document.createElement('blockquote');
-    blockquote2.textContent = quoteWrapper2.textContent.trim();
-    quoteWrapper2.replaceChildren(blockquote2);
-  }
-  
+  // const blockquote = document.createElement('blockquote');
+  // blockquote.textContent = quoteWrapper.textContent.trim();
+  // quoteWrapper.replaceChildren(blockquote);
+
+  block.innerHTML = `<a href="whatsapp://send?text=The text to share!" data-action="share/whatsapp/share">Share via Whatsapp</a>`;
+}

@@ -1,5 +1,8 @@
+// teaser.js
+import teaser from "../../utility/teaserUtils.js"
+
 export default function decorate(block) {
-    const [bg, fg] = block.childern;
-    bg.className = 'bg';
-    fg.className = 'fg';
+  teaser.getTeaser(block);
 }
+
+
