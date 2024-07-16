@@ -423,6 +423,10 @@
           {
             "name": "Text Only Teaser",
             "value": "text-only-teaser"
+          },
+          {
+            "name": "Dealer Card",
+            "value": "dealer-card-teaser"
           }
         ]
       }
@@ -704,10 +708,6 @@
           {
             "name": "Arena Card List",
             "value": "arena-card-list"
-          },
-          {
-            "name": "Dealer Card List",
-            "value": "dealer-card-list"
           }
         ]
       }

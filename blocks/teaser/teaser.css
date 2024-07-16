@@ -71,7 +71,7 @@ main .teaser-container > div {
 }
 
 .dark-teaser {
-  &.finance-card-teaser {
+  &.dealer-card-teaser {
     .teaser__card {
       background: var(
         --Gradients-Gradient-1,
