@@ -134,7 +134,7 @@ export default function decorate(block) {
   
   toggleFocusedClass();
 
-  if (themeType === 'dealer-card-list') {
+  if (themeType === 'dealer-cards-list') {
     setupDealerCards();
   }
 }
