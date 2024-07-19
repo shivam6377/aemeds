@@ -97,14 +97,14 @@ export default function decorate(block) {
   const theme = themeEl?.textContent?.trim();
   const themeType = themeTypeEl?.textContent?.trim();
 
-  // if (theme) {
-  //   block.classList.add(theme);
-  // }
-  // if (themeType) {
-  //   block.classList.add(themeType);
-  // }
+  if (theme) {
+    block.classList.add(theme);
+  }
+  if (themeType) {
+    block.classList.add(themeType);
+  }
 
-  block.classList.add("dealer-cards-list");
+  // block.classList.add("dealer-cards-list");
 
   const commonTitle = titleEl?.querySelector(':is(h1,h2,h3,h4,h5,h6)');
   commonTitle?.classList?.add('text-color', 'teaser-list__title');
@@ -134,6 +134,6 @@ export default function decorate(block) {
   block.innerHTML = '';
   block.insertAdjacentHTML('beforeend', utility.sanitizeHtml(newHtml));
   
-  // toggleFocusedClass();
+  toggleFocusedClass();
   setupDealerCards();
 }
