@@ -99,7 +99,6 @@ export default function decorate(block) {
 
   if (theme) {
     block.classList.add(theme);
-    block.classList.add("dealer-cards-list");
   }
   if (themeType) {
     block.classList.add(themeType);
