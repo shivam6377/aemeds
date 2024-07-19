@@ -102,7 +102,6 @@ export default function decorate(block) {
   }
   if (themeType) {
     block.classList.add(themeType);
-    block.classList.add("dealer-cards-list");
   }
 
   const commonTitle = titleEl?.querySelector(':is(h1,h2,h3,h4,h5,h6)');
@@ -134,5 +133,8 @@ export default function decorate(block) {
   block.insertAdjacentHTML('beforeend', utility.sanitizeHtml(newHtml));
   
   toggleFocusedClass();
-  setupDealerCards();
+
+  if (themeType === 'dealer-card-list') {
+    setupDealerCards();
+  }
 }
