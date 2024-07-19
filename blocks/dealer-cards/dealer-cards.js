@@ -7,7 +7,7 @@ export default function decorate(block) {
 
   const teasers = teaserListEl.map((card) => {
     const teaserObj = teaser.getTeaser(card)?.firstElementChild;
-    moveInstrumentation(card, teaserObj);
+    (card, teaserObj);
     utility.mobileLazyLoading(teaserObj, '.teaser__image img');
     return teaserObj.outerHTML;
   });
