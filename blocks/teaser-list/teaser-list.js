@@ -99,12 +99,12 @@ export default function decorate(block) {
 
   if (theme) {
     block.classList.add(theme);
+    block.classList.add("dealer-cards-list");
   }
   if (themeType) {
     block.classList.add(themeType);
+    block.classList.add("dealer-cards-list");
   }
-
-  // block.classList.add("dealer-cards-list");
 
   const commonTitle = titleEl?.querySelector(':is(h1,h2,h3,h4,h5,h6)');
   commonTitle?.classList?.add('text-color', 'teaser-list__title');
