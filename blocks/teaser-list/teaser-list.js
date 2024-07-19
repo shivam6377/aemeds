@@ -14,6 +14,14 @@ export default function decorate(block) {
       card.classList.remove('fadeIn');
     });
   }
+
+  function setupDealerCards() {
+    const cards = block.querySelectorAll(".teaser__cards .teaser__card");
+
+    cards[0].classList.add("teaser__card--primary");
+    cards[1].classList.add("teaser__card--secondary");
+  }
+
   function toggleFocusedClass() {
     const isMobile = !window.matchMedia('(min-width: 999px)').matches;
     const cardsContainer = block.querySelector('.teaser__cards');
@@ -88,14 +96,18 @@ export default function decorate(block) {
   const [titleEl, themeEl, themeTypeEl, ...teaserListEl] = block.children;
   const theme = themeEl?.textContent?.trim();
   const themeType = themeTypeEl?.textContent?.trim();
-  if (theme) {
-    block.classList.add(theme);
-  }
-  if (themeType) {
-    block.classList.add(themeType);
-  }
-  const commonTitle = titleEl?.querySelector(":is(h1,h2,h3,h4,h5,h6)");
-  commonTitle?.classList?.add("text-color");
+
+  // if (theme) {
+  //   block.classList.add(theme);
+  // }
+  // if (themeType) {
+  //   block.classList.add(themeType);
+  // }
+
+  block.classList.add("dealer-cards-list");
+
+  const commonTitle = titleEl?.querySelector(':is(h1,h2,h3,h4,h5,h6)');
+  commonTitle?.classList?.add('text-color', 'teaser-list__title');
   const teasers = teaserListEl.map((card) => {
     const teaserObj = teaser.getTeaser(card);
     utility.mobileLazyLoading(teaserObj, '.teaser__image img');
@@ -121,5 +133,7 @@ export default function decorate(block) {
 
   block.innerHTML = '';
   block.insertAdjacentHTML('beforeend', utility.sanitizeHtml(newHtml));
-  toggleFocusedClass();
+  
+  // toggleFocusedClass();
+  setupDealerCards();
 }

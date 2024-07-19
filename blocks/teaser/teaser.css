@@ -28,13 +28,9 @@ main .teaser-container > div {
   .row > div {
     padding-inline: 0;
   }
+}
 
-  .row > .teaser__cards-container {
-    position: relative;
-    overflow-x: hidden;
-    height: 420px;
-  }
-
+.teaser-list-container {
   .teaser__cards {
     height: 100%;
     width: 150%;
@@ -42,15 +38,21 @@ main .teaser-container > div {
     transition: padding 0.1s ease-out;
   }
 
-  @media (min-width: 999px) {
-    .row > .teaser__cards-container {
-      height: 463px;
-    }
+  .teaser__cards-container {
+    position: relative;
+    overflow-x: hidden;
+    height: 420px;
+  }
 
+  @media (min-width: 999px) {
     .teaser__cards {
       height: 100%;
       width: 100%;
       position: static;
+    }
+
+    .teaser__cards-container {
+      height: 463px;
     }
   }
 }
@@ -160,6 +162,7 @@ main .teaser-container > div {
         border-radius: inherit;
         margin: inherit;
       }
+
       .secondary__btn {
         font-family: "Fira Sans";
         font-size: 12px;
@@ -283,6 +286,7 @@ main .teaser-container > div {
           border-radius: inherit;
           margin: inherit;
         }
+
         .secondary__btn {
           font-family: "Fira Sans";
           padding: 8px 0;
@@ -317,6 +321,7 @@ main .teaser-container > div {
     .teaser__title .horizontal__arrow {
       display: none;
     }
+
     @media (min-width: 999px) {
       .finance-service__cards {
         grid-auto-columns: 650px 650px;
@@ -360,6 +365,7 @@ main .teaser-container > div {
         flex-direction: column;
         cursor: pointer;
         height: 406px;
+
         img {
           height: 100%;
           width: 100%;
@@ -369,14 +375,15 @@ main .teaser-container > div {
           flex-direction: row;
           align-items: flex-end;
           gap: 24px;
- 
+
           .teaser__info {
             width: 100%;
           }
         }
- 
+
         .teaser__title {
           position: relative;
+
           .teaser__title-text {
             color: var(--Tertiary-Light-grey, #f2f2f2);
             font-family: "Kepler Std";
@@ -385,12 +392,14 @@ main .teaser-container > div {
             font-weight: 500;
             line-height: 32px;
           }
+
           .horizontal__arrow {
             position: absolute;
             font-size: 50px;
             transform: translateY(-75%);
           }
         }
+
         .teaser__pretitle {
           p {
             color: var(--Tertiary-White, #fff);
@@ -398,14 +407,18 @@ main .teaser-container > div {
             font-size: 14px;
             font-style: normal;
             font-weight: 400;
-            line-height: 20px; /* 142.857% */
+            line-height: 20px;
+            /* 142.857% */
             text-transform: uppercase;
           }
         }
-        .teaser__pretitle, .teaser__title {
+
+        .teaser__pretitle,
+        .teaser__title {
           width: 100%;
           text-align: left;
         }
+
         .teaser__image {
           clip-path: none;
         }
@@ -413,6 +426,7 @@ main .teaser-container > div {
         &.teaser__left {
           position: relative;
           left: 0;
+
           .teaser__content {
             width: 100%;
             position: absolute;
@@ -420,20 +434,24 @@ main .teaser-container > div {
             justify-content: end;
             direction: rtl;
           }
+
           .teaser__title .horizontal__arrow {
             display: block;
 
             margin-right: 250px;
           }
         }
+
         &.teaser__right {
           position: relative;
+
           .teaser__content {
             position: absolute;
             inset: 0;
             direction: ltr;
             width: 100%;
           }
+
           .teaser__title .horizontal__arrow {
             margin-left: 250px;
           }
@@ -450,6 +468,7 @@ main .teaser-container > div {
 
         .teaser__actions {
           gap: 48px;
+
           .primary__btn {
             font-size: 16px;
             line-height: 24px;
@@ -717,6 +736,7 @@ main .teaser-container > div {
     margin-top: 16px;
   }
 }
+
 @media (min-width: 999px) {
   .dark-teaser .teaser__card--unfocused .teaser__content {
     background-color: rgba(201, 211, 215, 0.5);
@@ -748,16 +768,19 @@ main .teaser-container > div {
   width: 50px;
   height: 50px;
 }
+
 .teaser-list-container .teaser-list__title {
   font-family: "Kepler Std";
   font-size: 32px;
   font-style: normal;
   font-weight: 600;
-  line-height: 40px; /* 125% */
+  line-height: 40px;
+  /* 125% */
   letter-spacing: 0.64px;
   margin-bottom: 32px;
   padding-left: 24px;
 }
+
 @media (min-width: 999px) {
   .teaser-list-container .teaser-list__title {
     padding-left: 64px;
@@ -765,12 +788,12 @@ main .teaser-container > div {
     line-height: 72px;
     margin-bottom: 60px;
   }
+
   .dark-teaser .teaser__card--unfocused .teaser__content .teaser__title-text {
     position: relative;
   }
-  .dark-teaser
-    .teaser__right.teaser__card--unfocused
-    .teaser__content::after {
+
+  .dark-teaser .teaser__right.teaser__card--unfocused .teaser__content::after {
     content: "";
     display: inline-block;
     height: 48px;
@@ -778,9 +801,8 @@ main .teaser-container > div {
     background: url("../../icons/chevron_right_white.svg") no-repeat;
     cursor: pointer;
   }
-  .dark-teaser
-    .teaser__left.teaser__card--unfocused
-    .teaser__content::after {
+
+  .dark-teaser .teaser__left.teaser__card--unfocused .teaser__content::after {
     content: "";
     display: inline-block;
     height: 48px;
