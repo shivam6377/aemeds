@@ -132,10 +132,17 @@ export default function decorate(block) {
   block.innerHTML = '';
   block.insertAdjacentHTML('beforeend', utility.sanitizeHtml(newHtml));
   
-  toggleFocusedClass();
+
+
+  if (themeType !== 'dealer-cards-list') {
+    toggleFocusedClass();
+  }
+
 
   if (themeType == 'dealer-cards-list') {
-    
-  }
-  setupDealerCards();
+    setupDealerCards();
 }
+
+
+  }
+  
