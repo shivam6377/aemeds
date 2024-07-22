@@ -16,10 +16,10 @@ export default function decorate(block) {
   }
 
   function setupDealerCards() {
-    const cards = block.querySelectorAll(".teaser__cards .teaser__card");
+    const cards = block.querySelectorAll('.teaser__cards .teaser__card');
 
-    cards[0].classList.add("teaser__card--primary");
-    cards[1].classList.add("teaser__card--secondary");
+    cards[0].classList.add('teaser__card--primary');
+    cards[1].classList.add('teaser__card--secondary');
   }
 
   function toggleFocusedClass() {
@@ -131,18 +131,10 @@ export default function decorate(block) {
 
   block.innerHTML = '';
   block.insertAdjacentHTML('beforeend', utility.sanitizeHtml(newHtml));
-  
-
-
   if (themeType !== 'dealer-cards-list') {
     toggleFocusedClass();
   }
-
-
-  if (themeType == 'dealer-cards-list') {
+  if (themeType === 'dealer-cards-list') {
     setupDealerCards();
-}
-
-
   }
-  
+}
