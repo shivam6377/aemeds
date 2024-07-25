@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.javadoubts.com/Sitemap.xml
+Sitemap: https://www.javadoubts.com/sitemap.xml
