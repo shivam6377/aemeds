@@ -1,5 +1,4 @@
  sitemaps:
    example:
-   origin: https://main--aemeds--shivam6377.hlx.page/
      source: /query-index.json
      destination: /sitemap.xml
